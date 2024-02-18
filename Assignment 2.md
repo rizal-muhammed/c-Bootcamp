@@ -118,8 +118,33 @@ int main()
 }
 ```
 
+8. Write a program to check whether the given number is even or odd using a bitwise
+operator.
+```
+#include <stdio.h>
 
-9. Write a program to print size of an int, a float, a char and a double type variable
+
+int main()
+{
+    int num;
+    printf("Enter your number to check whether odd or even : \n");
+    scanf("%d", &num);
+    
+    /*If the number is odd, then the correponding binary representation
+    will end with 1.
+    To check whether a number's binary end with 1, we can perform bitwise AND operation
+    and check whether it is equal to 1.*/
+    if (num == 0) // Excluding 0, since 0 is neither odd nor even.
+        printf("%d is Zero, neither odd nor even.\n", num);
+    else if ((num & 1) == 1) // perform bitwise AND check whether equal to 1
+        printf("%d is Odd.\n", num);
+    else
+        printf("%d is Even.\n", num);
+}
+```
+
+
+10. Write a program to print size of an int, a float, a char and a double type variable
 ```
 #include <stdio.h>
 
