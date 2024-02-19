@@ -117,6 +117,42 @@ int main()
     return 0;
 }
 ```
+7. Write a program to find the position of first 1 in LSB.
+```
+#include <stdio.h>
+
+int main()
+{
+    int pos = 0, num, temp;
+
+    printf("Enter a number : \n");
+    scanf("%d", &num);
+    temp = num;
+
+    /*To chech whether the binary representation of a number ends with 1,
+    We can perform bitwise AND between the number and 1 and check whether the 
+    corresponding result is 1.*/
+    if (num == 0)
+        printf("The number %d is Zero. Therefore, no 1 in corresponding binary representation.", num);
+    else
+    {
+        while(num != 0)
+        {
+            if ((num & 1) == 1)
+                break;
+            else
+            {
+                num = (num >> 1);
+                pos++;
+            }
+        }
+        printf("The position of first 1 in LSB is %d from right to left.\n", pos);
+        printf("NB: 0 indexing is used.\n");
+    }
+
+    return 0;
+}
+```
 
 8. Write a program to check whether the given number is even or odd using a bitwise
 operator.
@@ -144,7 +180,7 @@ int main()
 ```
 
 
-10. Write a program to print size of an int, a float, a char and a double type variable
+9. Write a program to print size of an int, a float, a char and a double type variable
 ```
 #include <stdio.h>
 
@@ -227,4 +263,24 @@ int main()
     printf("%.2f INR is equivalent to %.2f USD.\n", inr, usd);
     return 0;
 }
+```
+
+13. Write a program to take a three-digit number from the user and rotate its digits by
+one position towards the right.
+```
+#include <stdio.h>
+
+int main()
+{
+    int num, unit_digit;
+    printf("Enter your three digit number : \n");
+    scanf("%3d", &num);
+
+    unit_digit = num % 10;
+    num /= 10;
+
+    printf("The resultant is %d\n", unit_digit * 100 + num);
+    return 0;
+}
+
 ```
