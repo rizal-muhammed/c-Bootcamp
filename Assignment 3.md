@@ -171,3 +171,136 @@ int main()
     return 0;
 }
 ```
+9. Write a program to find the greatest among three given numbers. Print number once
+if the greatest number appears two or three times.
+```
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c, greatest=-9999;
+    printf("Enter three numbers (followed by space) : \n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a >= b)
+    {
+        if (a >= c)
+        {
+            if (a == b || a == c)
+            {
+                greatest = a;
+                printf("%d\n", a);
+            }
+            else
+                greatest = c;
+        }
+    }
+    else if (b >= c)
+    {
+        if (b == c)
+            printf("%d\n", b);
+        else
+            greatest = c;
+    }
+
+return 0;
+}
+```
+10. Write a program which takes the cost price and selling price of a product from the
+user. Now calculate and print profit or loss percentage.
+```
+#include <stdio.h>
+
+int main()
+{
+    float cost_price, selling_price, p_or_l, p_or_l_perc;
+    printf("Enter Cost Price : \n");
+    scanf("%f", &cost_price);
+
+    printf("Enter Selling Price: \n");
+    scanf("%f", &selling_price);
+
+    p_or_l = selling_price - cost_price;
+    p_or_l_perc = (p_or_l / cost_price) * 100 ; 
+
+    printf("Profit / Loss Percentage = %.2f %%\n", p_or_l_perc);
+
+    return 0;
+}
+```
+11. Write a program to take marks of 5 subjects from the user. Assume marks are given
+out of 100 and passing marks is 33. Now display whether the candidate passed the
+examination or failed.
+```
+#include <stdio.h>
+
+int main()
+{
+    float a, b, c, d, e;
+    int passing_marks = 33;
+    int pass = 1;
+
+    for (int i=1; i<=5; i++)
+    {
+        printf("Enter marks for subject %d\n", i);
+
+        switch (i)
+        {
+        case 1:
+            scanf("%f", &a);
+            if (a < passing_marks)
+                pass = 0;
+            break;
+        case 2:
+            scanf("%f", &b);
+            if (b < passing_marks)
+                pass = 0;
+            break;
+        case 3:
+            scanf("%f", &c);
+            if (c < passing_marks)
+                pass = 0;
+            break;
+        case 4:
+            scanf("%f", &d);
+            if (d < passing_marks)
+                pass = 0;
+            break;
+        case 5:
+            scanf("%f", &e);
+            if (e < passing_marks)
+                pass = 0;
+            break;
+        
+        default:
+            break;
+        }
+    }
+
+    if(pass)
+        printf("Student passed the examination\n");
+    else
+        printf("Student failed the examination\n");
+
+    return 0;
+}
+```
+12. Write a program to check whether a given alphabet is in uppercase or lowercase.
+```
+#include <stdio.h>
+
+int main()
+{
+    int16_t a_char;
+    printf("Enter a character: \n");
+    a_char = getchar();
+
+    if (a_char >= 65 && a_char <= 90)
+        printf("%c is an Upper Case Character.\n", a_char);
+    else if (a_char >= 97 && a_char <= 122)
+        printf("%c is a Lower Case Character.\n", a_char);
+    else
+        printf("Neither Upper Case Nor Lower Case Character.\n");
+    return 0;
+}
+```
