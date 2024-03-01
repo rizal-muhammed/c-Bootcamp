@@ -304,3 +304,187 @@ int main()
     return 0;
 }
 ```
+13. Write a program to check whether a given number is divisible by 3 and divisible by 2.
+```
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number: \n");
+    scanf("%d", &num);
+
+    if (num%3 == 0 && num%2 == 0)
+        printf("%d is divisible by 2 and 3\n", num);
+    else
+        printf("%d is not divisible by 2 and 3\n", num);
+
+    return 0;
+}
+```
+
+14. Write a program to check whether a given number is divisible by 7 or divisible by 3.
+```
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number: \n");
+    scanf("%d", &num);
+
+    if (num%3 == 0 || num%7 == 0)
+        printf("%d is divisible by 3 or 7\n", num);
+    else
+        printf("%d is not divisible by 3 or 7\n", num);
+
+    return 0;
+}
+```
+
+15. Write a program to check whether a given number is positive, negative or zero.
+```
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter your number: \n");
+    scanf("%d", &num);
+
+    if (num == 0)
+        printf("The number is Zero.\n");
+    else if (num > 0)
+        printf("%d is Positive.\n", num);
+    else 
+        printf("%d is Negative\n", num);
+
+    return 0;
+}
+```
+
+16. Write a program to check whether a given character is an alphabet (uppercase), an
+alphabet (lower case), a digit or a special character.
+```
+#include <stdio.h>
+
+int main() 
+{
+    char c;
+    printf("Enter an alphabet, digit or special character: \n");
+    scanf(" %c", &c);
+
+    if (c >= '0' && c <= '9')
+        printf("%c is a digit.\n", c);
+    else if (c >= 'A' && c <= 'Z')
+        printf("%c is an uppercase alphabet.\n", c);
+    else if (c >= 'a' && c <= 'z')
+        printf("%c is a lower case alphabet.\n", c);
+    else if (c >= '!' && c <= '/')
+        printf("%c is a special character.\n", c);
+    else 
+        printf("Not a valid digit, uppercase or lowercase alphabet, and special character.\n");
+
+    return 0;
+}
+```
+
+17. Write a program which takes the length of the sides of a triangle as an input. Display
+whether the triangle is valid or not.
+```
+#include <stdio.h>
+
+int main()
+{
+    float side1, side2, side3;
+
+    printf("Enter length of side 1: \n");
+    scanf("%f", &side1);
+
+    printf("Enter length of side 2: \n");
+    scanf("%f", &side2);
+
+    printf("Enter length of side 3: \n");
+    scanf("%f", &side3);
+
+    if ((side1 + side2 > side3) && 
+        (side1 + side3 > side2) && 
+        (side2 + side3 > side1))
+        printf("%.1f, %.1f  and %.1f are sides of a valid triangle.\n", side1, side2, side3);
+    else 
+        printf("%.1f, %.1f  and %.1f are not sides of a valid triangle.\n", side1, side2, side3);
+
+    return 0;
+}
+```
+
+18. Write a program which takes the month number as an input and display number of
+days in that month
+```
+#include <stdio.h>
+
+int main()
+{
+    int month_num;
+
+    printf("Enter month number: \n");
+    scanf("%d", &month_num);
+
+    switch (month_num)
+    {
+    case 1:
+        printf("Jan contains 31 days\n");
+        break;
+    
+    case 2:
+        printf("Feb contains 28 or 29 days depending year.\n");
+        break;
+
+    case 3:
+        printf("Mar contains 31 days\n");
+        break;
+
+    case 4:
+        printf("Apr contains 30 days\n");
+        break;
+
+    case 5:
+        printf("May contains 31 days\n");
+        break;
+
+    case 6:
+        printf("Jun contains 30 days\n");
+        break;
+
+    case 7:
+        printf("Jul contains 31 days\n");
+        break;
+    
+    case 8:
+        printf("Aug contains 31 days\n");
+        break;
+    
+    case 9:
+        printf("Sep contains 30 days\n");
+        break;
+
+    case 10:
+        printf("Oct contains 31 days\n");
+        break;
+
+    case 11:
+        printf("Nov contains 30 days\n");
+        break;
+
+    case 12:
+        printf("Dec contains 31 days\n");
+        break;
+    
+    default:
+        printf("Not a valid month number.\n");
+        break;
+    }
+
+    return 0;
+}
+```
