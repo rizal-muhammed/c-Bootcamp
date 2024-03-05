@@ -182,11 +182,32 @@ int main()
 ```
 9. Write a program to calculate LCM of two numbers
 ```
+#include <stdio.h>
 
+int main()
+{
+    int a, b, max, min, step = 1, lcm;
+
+    printf("Program to calculate LCM of two numbers\n");
+    printf("Enter two numbers(separated by space)\n");
+    scanf("%d %d", &a, &b);
+
+    max = a > b ? a : b; // finding the maximum
+    min = a > b ? b : a; // finding the minimum
+
+    do
+    {
+        lcm = max * step;
+        step++;
+    } while (lcm % min); // stops when max % min == 0
+
+    printf("LCM of %d and %d = %d\n", a, b, lcm);
+    
+}
 ```
 
 
-11. Write a program to reverse a given number
+10. Write a program to reverse a given number
 ```
 #include <stdio.h>
 #include <stdlib.h>
