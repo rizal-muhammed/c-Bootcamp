@@ -89,6 +89,36 @@ int main()
 
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/bb1ecb44-7e61-4ca2-90c2-4196ee8dc216)
 ```
+#include <stdio.h>
+
+int main()
+{
+    int rows;
+
+    printf("Program to print * pattern\n");
+    printf("Enter number of rows\n");
+    scanf("%d", &rows);
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < rows; j++)
+        {
+            if (j < i)
+                printf(" ");
+            else
+                printf("*");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
+<br>
+
+![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/ca250ac0-3471-4ffa-b697-3899f6f1908e)
+```
 
 ```
+
 
