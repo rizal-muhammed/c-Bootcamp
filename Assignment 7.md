@@ -333,5 +333,71 @@ bool is_prime(int x)
 
 8. Write a program to find next Prime number of a given number
 ```
+#include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
+
+bool is_prime(int);
+
+int main()
+{
+    int num, next_prime, temp;
+
+    printf("Program to find the next prime number of a given number\n");
+    printf("Enter your number\n");
+    scanf("%d", &num);
+    temp = num;
+
+    while (num >= 0)
+    {
+        if (is_prime(num))
+        {
+            next_prime = num;
+            break;
+        }
+        num++;
+    }
+    
+
+    printf("\nNext prime number after %d is %d\n", temp, next_prime);
+    return 0;
+}
+
+bool is_prime(int x)
+{
+    /* 
+
+    Description
+    -----------
+    Function to check if x is prime or not 
+
+    Input(s)
+    --------
+    x : int type
+    The input number to check if prime or not
+
+    Returns
+    -------
+    bool type
+    returns true if x is prime, otherwise, false is returned
+
+    */
+
+    if (x <= 1)
+        return false;
+    
+    for (int i = 2; i <= x/2 + 1; i++)
+    {
+        if (x != i && x%i == 0)
+            return false;
+    }
+
+    return true;
+}
+```
+<br>
+
+9. Write a program to check whether a given number is an Armstrong number or not
+```
 
 ```
