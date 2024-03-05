@@ -56,4 +56,11 @@ int main()
 }
 
 ```
+<br>
+
+Pattern 3
+![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/0349a2e9-85f1-499f-89f6-488ab70c91e3)
+```
+
+```
 
