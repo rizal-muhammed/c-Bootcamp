@@ -38,6 +38,7 @@ int main()
     return 0;
 }
 ```
+<br>
 
 2. Write a program to print first N terms of Fibonacci series
 ```
@@ -74,6 +75,8 @@ int main()
     return 0;
 }
 ```
+<br>
+
 3. Write a program to check whether a given number is there in the Fibonacci series or not.
 ```
 #include <stdio.h>
@@ -126,6 +129,8 @@ int main()
     return 0;
 }
 ```
+<br>
+
 4. Write a program to calculate HCF of two numbers
 ```
 
