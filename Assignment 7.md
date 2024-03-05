@@ -215,5 +215,61 @@ int main()
 
 6. Write a program to print all Prime numbers under 100
 ```
+#include <stdio.h>
+#include <stdbool.h>
+
+bool is_prime(int);
+
+int main()
+{
+    printf("Program to print all the prime numbers less than 100\n");
+    printf("Prime numbers less than 100 are \n");
+
+    for (int i = 1; i <= 100; i++)
+    {
+        if (is_prime(i))
+            printf("%d\t", i);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+bool is_prime(int x)
+{
+    /* 
+
+    Description
+    -----------
+    Function to check if x is prime or not 
+
+    Input(s)
+    --------
+    x : int type
+    The input number to check if prime or not
+
+    Returns
+    -------
+    bool type
+    returns true if x is prime, otherwise, false is returned
+
+    */
+
+    if (x <= 1)
+        return false;
+    
+    for (int i = 2; i <= x/2 + 1; i++)
+    {
+        if (x != i && x%i == 0)
+            return false;
+    }
+
+    return true;
+}
+```
+<br>
+
+7. Write a program to print all Prime numbers between two given numbers
+```
 
 ```
