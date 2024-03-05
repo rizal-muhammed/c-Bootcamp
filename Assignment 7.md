@@ -133,5 +133,44 @@ int main()
 
 4. Write a program to calculate HCF of two numbers
 ```
+#include <stdio.h>
+
+int main()
+{
+    int a, b, hcf = 1;
+    int abs_a, abs_b, max;
+
+    printf("Program to calculate the HCF(Highest Common Factor) of two numbers\n");
+    printf("Enter two numbers(separated by space)\n");
+    scanf("%d %d", &a, &b);
+
+    abs_a = a < 0? -1 * a : a; // Absolute value of a
+    abs_b = b < 0? -1 * b : b; // Absolute value of b
+    max = abs_a > abs_b? abs_a : abs_b; // Maximum
+
+    /* We use factor method to computed the highest common factor of two numbers */
+    if (abs_a == abs_b)
+        hcf = abs_a;
+    else
+    {
+        for (int i = 2; i <= max/2 + 1; i++)
+        {
+            if (abs_a % i == 0 && abs_b % i == 0)
+                hcf = i;
+        }
+    }
+
+    if (hcf != 1)
+        printf("HCF of %d and %d is %d\n", a, b, hcf);
+    else 
+        printf("There are no common factors between %d and %d\n", a, b);
+
+    return 0;
+}
+```
+<br>
+
+5. Write a program to check whether two given numbers are co-prime numbers or not
+```
 
 ```
