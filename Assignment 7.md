@@ -271,5 +271,67 @@ bool is_prime(int x)
 
 7. Write a program to print all Prime numbers between two given numbers
 ```
+#include <stdio.h>
+#include <stdbool.h>
+
+bool is_prime(int);
+
+int main()
+{
+    int a, b;
+
+    printf("Program to print all prime numbers between two given numbers a and b\n");
+    printf("Enter a and b (separated by space)\n");
+    scanf("%d %d", &a, &b);
+
+    printf("Prime numbers between %d and %d are\n", a, b);
+    printf("-----------------------------------\n");
+
+    for (int i = a; i <= b; i++)
+    {
+        if (is_prime(i))
+            printf("%d\t", i);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+bool is_prime(int x)
+{
+    /* 
+
+    Description
+    -----------
+    Function to check if x is prime or not 
+
+    Input(s)
+    --------
+    x : int type
+    The input number to check if prime or not
+
+    Returns
+    -------
+    bool type
+    returns true if x is prime, otherwise, false is returned
+
+    */
+
+    if (x <= 1)
+        return false;
+    
+    for (int i = 2; i <= x/2 + 1; i++)
+    {
+        if (x != i && x%i == 0)
+            return false;
+    }
+
+    return true;
+}
+```
+<br>
+
+8. Write a program to find next Prime number of a given number
+```
 
 ```
