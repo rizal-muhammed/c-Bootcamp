@@ -465,5 +465,92 @@ int main()
 
 10. Write a program to print all Armstrong numbers under 1000
 ```
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
 
+int num_digits(int);
+bool is_armstrong(int);
+
+int main()
+{
+    printf("Program to print all the armstrong numbers under 100\n");
+    printf("Armstrong numbers under 1000 are\n");
+    printf("-------------------------------\n");
+
+    for (int i = 0; i<1000; i++)
+    {
+        if (is_armstrong(i))
+            printf("%d is Armstrong number\n", i);
+    }
+    
+    return 0;
+}
+
+int num_digits(int x)
+{
+    /* 
+
+    Description
+    -----------
+    Function to calculate number of digits in a number 
+
+    Input(s)
+    --------
+    x : int type
+    The input number for which, the number of digits should be calculated
+
+    Returns
+    -------
+    num_digits : int type
+    returns the number of digits in a given number
+
+    */
+
+   int digits = 0;
+
+   do
+    {
+        digits++;
+        x /= 10;
+    } while (x);
+
+   return digits;
+}
+
+bool is_armstrong(int x)
+/* 
+
+    Description
+    -----------
+    Function to check whether a given number is Armstrong number or not 
+
+    Input(s)
+    --------
+    x : int type
+    The input number to check if it is Armstrong number or not
+
+    Returns
+    -------
+    bool type
+    returns true if x is Armstrong number, otherwise false is returned
+
+    */
+{
+    int digits, sum = 0, temp;
+    temp = x;
+
+    digits = num_digits(x); // calculate number of digits in x
+
+    do
+    {
+        sum += (int)powf(x % 10, digits);
+        x /= 10;
+    } while (x);
+
+    if (temp == sum)
+        return true;
+    else
+        return false;
+}
 ```
