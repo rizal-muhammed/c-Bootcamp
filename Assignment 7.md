@@ -172,5 +172,48 @@ int main()
 
 5. Write a program to check whether two given numbers are co-prime numbers or not
 ```
+#include <stdio.h>
+
+int main()
+{
+    int a, b, cf = 1;
+    int abs_a, abs_b, max;
+
+    printf("Program to check if two numbers are co-primes\n");
+    printf("Enter two numbers(separated by space)\n");
+    scanf("%d %d", &a, &b);
+
+    abs_a = a < 0? -1 * a : a; // Absolute value of a
+    abs_b = b < 0? -1 * b : b; // Absolute value of b
+    max = abs_a > abs_b? abs_a : abs_b; // Maximum
+
+    /* We use factor method to computed the highest common factor of two numbers */
+    /* If two numbers have only common factor as 1, then the two numbers are co-prime */
+    if (abs_a == abs_b)
+        cf = abs_a;
+    else
+    {
+        for (int i = 2; i <= max/2 + 1; i++)
+        {
+            if (abs_a % i == 0 && abs_b % i == 0)
+            {
+                cf = abs_a;
+                break;
+            }
+        }
+    }
+
+    if (cf != 1)
+        printf("%d and %d are not co-primes\n", a, b);
+    else 
+        printf("%d and %d are co-primes\n", a, b);
+
+    return 0;
+}
+```
+<br>
+
+6. Write a program to print all Prime numbers under 100
+```
 
 ```
