@@ -74,3 +74,59 @@ int main()
     return 0;
 }
 ```
+3. Write a program to check whether a given number is there in the Fibonacci series or not.
+```
+#include <stdio.h>
+
+int main()
+{
+    int num, is_fib = 0, a = 0, b = 1, Nth_term = 2; 
+
+    printf("Program to check whether a given is in fibonacci sequence\n");
+    printf("Enter your number: \n");
+    scanf("%d", &num);
+
+    if (num ==0 || num == 1)
+        is_fib = 1;
+    else if (num >= 2)
+    {
+        int i = 2;
+        while (num >= Nth_term)
+        {
+            if (i%2 == 0)
+            {
+                a = a + b;
+                Nth_term = a;
+                if (Nth_term == num)
+                {
+                    is_fib = 1;
+                    break;
+                }
+            }
+            else
+            {
+                b = a + b;
+                Nth_term = b;
+                if (Nth_term == num)
+                {
+                    is_fib = 1;
+                    break;
+                }
+            }
+            i++;
+        }
+        
+    }
+
+    if (is_fib)
+        printf("%d is in fibonacci sequence\n", num);
+    else 
+        printf("%d is not in fibonacci sequence\n", num);
+
+    return 0;
+}
+```
+4. Write a program to calculate HCF of two numbers
+```
+
+```
