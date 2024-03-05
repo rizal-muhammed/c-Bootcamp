@@ -399,5 +399,71 @@ bool is_prime(int x)
 
 9. Write a program to check whether a given number is an Armstrong number or not
 ```
+#include <stdio.h>
+#include <math.h>
+
+/* 
+An Armstrong number (also known as a narcissistic number) is a number 
+that is equal to the sum of its own digits raised to the power of the 
+number of digits in the number itself.
+
+For example, let's take the number 153:
+
+    The number of digits in 153 is 3.
+    The sum of the cubes of its digits is 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+    So, 153 is an Armstrong number.
+
+Examples for Armstrong number are
+0 (Though it doesn't fit the usual definition, it's considered an Armstrong number in some conventions.)
+1
+153
+370
+371
+407
+1634
+8208
+9474
+54748
+92727
+93084
+
+*/
+
+int main()
+{
+    int num, temp, sum = 0, num_digits = 0;
+
+    printf("Program to check whether a given number is Armstrong number or not\n");
+    printf("Enter your number\n");
+    scanf("%d", &num);
+    temp = num;
+
+    /* Finding the number of digits in the input number */
+    do
+    {
+        num_digits++;
+        num /= 10;
+    } while (num);
+
+    /* Checking whether the input number is Armstrong number or not*/
+    num = temp;
+    do
+    {
+        sum += (int)powf(num % 10, num_digits);
+        num /= 10;
+    } while (num);
+
+    if (temp == sum)
+        printf("%d is an Armstrong number\n", temp);
+    else
+        printf("%d is not an Armstrong number\n", temp);
+
+    return 0;
+}
+```
+<br>
+
+10. Write a program to print all Armstrong numbers under 1000
+```
 
 ```
