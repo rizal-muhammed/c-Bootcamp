@@ -600,7 +600,51 @@ Pattern 19 <br>
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/9285a485-c04f-49bb-92b0-883e88610fa2)
 
 ```
+#include <stdio.h>
 
+int main()
+{
+    int i, j;
+
+    printf("Program to print heart shaped * pattern\n");
+
+    /* Upper Portion */
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 19; j++)
+        {
+            if (((j >= 2-i) && (j <= 6 + i)) || ((j >= 12 - i) && (j <= 16 + i)))
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    
+
+    /* Lower Triangle */
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 19; j++)
+        {
+            if (i == 0 && j == 6)
+                printf("MySirG");
+            if ((j >= i) && (j <= 18 - i))
+            {
+                if (i == 0 && j > 18 - 6)
+                    printf(" ");
+                else
+                    printf("*");
+            }
+            else 
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
 ```
 
 
