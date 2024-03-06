@@ -388,7 +388,48 @@ int main()
 
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/ca97b7be-77e6-4ae0-a2a9-bbd589506ccc)
 ```
+#include <stdio.h>
+
+int main()
+{
+    int rows;
+    char k;
+
+    printf("Program to print pattern with alphabets\n");
+
+    printf("Enter number of rows: \n");
+    scanf("%d", &rows);
+
+    for (int i = 0; i < rows; i++)
+    {
+        k = 'A';
+        for (int j = 0; j < 2 * rows - 1; j++)
+        {
+            if (j < rows - i || j > rows - 2 + i)
+                {
+                    if (j < rows - 1)
+                        printf("%c", k++);
+                    else if (j == rows - 1)
+                        printf("%c", k);
+                    else
+                        printf("%c", --k);
+                }
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+<br>
+
+Pattern 14
+![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/73fd3d2c-97b6-4189-92de-4d0d5594168e)
+```
 
 ```
+
 
 
