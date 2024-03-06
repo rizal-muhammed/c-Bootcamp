@@ -559,9 +559,49 @@ int main()
 Pattern 18 <br>
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/ae502a8e-a12f-4c59-bf93-c8bfa940fcbb)
 ```
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Program to print * pattern\n");
+
+    printf("Enter a number\n");
+    scanf("%d", &num);
+
+    for (int i = 0; i < 2 * num - 1; i++)
+    {
+        for (int j = 0; j < 2 * num - 1; j++)
+        {
+            if (i <= num - 1)
+            {
+                if (j < (num - 1) - i || j > num - 1 + i)
+                    printf(" ");
+                else
+                    printf("*");
+            }
+            else
+            {
+                if (j < i - (num - 1) || j > 3 * (num - 1) - i)
+                    printf(" ");
+                else
+                    printf("*");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+<br>
+
+Pattern 19 <br>
+![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/9285a485-c04f-49bb-92b0-883e88610fa2)
 
 ```
 
+```
 
 
 
