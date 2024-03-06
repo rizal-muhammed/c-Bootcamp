@@ -182,24 +182,28 @@ int main()
 int main()
 {
     int rows;
+    char k;
 
-    printf("Program to print * pattern\n");
-    printf("Enter number of rows\n");
+    printf("Program to print pattern with alphabets\n");
+
+    printf("Enter number of rows: \n");
     scanf("%d", &rows);
 
     for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < 2 * rows; j++)
+        k = 'A';
+        for (int j = 0; j < 2 * rows - 1; j++)
         {
-            if (j < rows - i || j > rows - 1 + i)
-                printf("*");
-            else
+            if (j > (rows - 1) - i && j < (rows - 1) + i)
                 printf(" ");
+            else
+                printf("*");
         }
         printf("\n");
     }
 
     return 0;
+}
 }
 ```
 <br>
