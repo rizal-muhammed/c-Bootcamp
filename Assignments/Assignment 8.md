@@ -347,7 +347,7 @@ int main()
 ```
 <br>
 
-Pattern 12
+Pattern 12 <br>
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/26ca8247-00b0-46a4-a98e-270d4d293025)
 ```
 
