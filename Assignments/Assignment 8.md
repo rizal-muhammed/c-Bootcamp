@@ -182,7 +182,6 @@ int main()
 int main()
 {
     int rows;
-    char k;
 
     printf("Program to print pattern with alphabets\n");
 
@@ -191,7 +190,6 @@ int main()
 
     for (int i = 0; i < rows; i++)
     {
-        k = 'A';
         for (int j = 0; j < 2 * rows - 1; j++)
         {
             if (j > (rows - 1) - i && j < (rows - 1) + i)
