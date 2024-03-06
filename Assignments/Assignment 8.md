@@ -350,6 +350,43 @@ int main()
 Pattern 12 <br>
 ![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/26ca8247-00b0-46a4-a98e-270d4d293025)
 ```
+#include <stdio.h>
+
+int main()
+{
+    int rows;
+    char k;
+
+    printf("Program to print patterns with alphabets\n");
+    
+    printf("Enter number of rows: \n");
+    scanf("%d", &rows);
+    
+    for (int i = 0; i < rows; i++)
+    {
+        k = 'A';
+        for (int j = 0; j < 2 * rows - 1; j++)
+        {
+            if (j < i || j > 2 * rows - 2 - i)
+                printf(" ");
+            else if (j >= i && j < rows - 1)
+                printf("%c", k++);
+            else if (j == rows - 1)
+                printf("%c", k);
+            else if (j > rows - 1)
+                printf("%c", --k);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+<br>
+
+![image](https://github.com/rizal-muhammed/c-Bootcamp/assets/37320039/ca97b7be-77e6-4ae0-a2a9-bbd589506ccc)
+```
 
 ```
+
 
