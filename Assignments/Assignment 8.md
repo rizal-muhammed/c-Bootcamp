@@ -159,11 +159,11 @@ int main()
 
     for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < 2 * rows - i; j++)
+        for (int j = 0; j < 2 * rows - 1; j++)
         {
-            if (j < i || j > rows - i + 3)
+            if (j < i || j > 2 * (rows - 1) - i)
                 printf(" ");
-            else 
+            else
                 printf("*");
         }
         printf("\n");
