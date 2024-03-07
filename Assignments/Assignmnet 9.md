@@ -342,6 +342,34 @@ the switch statement. <br>
 8. Program to convert a positive number into a negative number and negative
 number into a positive number using a switch statement.
 ```
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Program to convert a positive number into negative number and vice versa\n");
+    printf("Enter number: \n");
+    scanf("%d", &num);
+
+    switch (num >= 0)
+    {
+    case 0:
+        /* negative number */
+        printf("%d is a negative number.\nThe corresponding positive num is %d\n", num, -1 * num);
+        break;
+    case 1:
+        /* Zero or Positive number */
+        if (num == 0)
+            printf("You've enetered Zero\n");
+        else 
+            printf("%d is a Positive number.\nThe corresponding negative num is %d\n", num, -1 * num);
+        break;
+    
+    default:
+        break;
+    }
+    return 0;
+}
 ```
 <br>
 
