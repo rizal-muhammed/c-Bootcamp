@@ -139,6 +139,48 @@ int main()
 
 3. Write a program which takes the day number of a week and displays a unique greeting message for the day.
 ```
+#include <stdio.h>
+
+int main()
+{
+    int day;
+    printf("Program to print unique greeting message for a day\n");
+    
+    printf("1. Mon\n2. Tue\n3. Wed\n4. Thu\n5. Fri\n6. Sat\n7. Sun\n\n");
+    printf("Enter day number: \n");
+    scanf("%d", &day);
+
+    switch (day)
+    {
+    case 1:
+        printf("I know it's hard because it's Monday, but keep smiling, nevertheless\n");
+        break;
+    case 2:
+        printf("Got the momentum back, right? Keep pushing, because it's only Tuesday\n");
+        break;
+    case 3:
+        printf("Oh! it's already Wednesday. Good Job\n");
+        break;
+    case 4:
+        printf("Happy Thursday. It's almost weekend\n");
+        break;
+    case 5:
+        printf("Yay! it's Friday, Are you ready for the party at night!!!\n");
+        break;
+    case 6:
+        printf("Oh, it's Saturday. Zip a coffee for the hangover.");
+        break;
+    case 7:
+        printf("Sunday Funday. Enjoy\n");
+        break;
+    
+    default:
+        printf("%d is not a valid choice\n", day);
+        break;
+    }
+
+    return 0;
+}
 
 ```
 <br>
