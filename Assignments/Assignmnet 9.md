@@ -194,7 +194,60 @@ int main()
     or not <br>
     d. Exit <br>
 ```
+#include <stdio.h>
+#include <math.h>
 
+int main()
+{
+    float a, b, c;
+    int choice;
+    printf("Enter three numbers(separated by space)\n");
+    scanf("%f %f %f", &a, &b, &c);
+
+    printf("\n1. Check Isosceles triangle\n2. Right angled triangle\n"
+           "3. Equilateral triagle\n4. Exit\n\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice)
+    {
+    case 1:
+        /* Isoceles triangle (two sides of equal length) */
+        if ((a == b && a != c) || 
+            (b == c && b != a) ||
+            (a == c && a != b))
+            printf("%0.1f, %0.1f, %0.1f are sides of an Isoceles triangle\n", a, b, c);
+        else 
+            printf("%0.1f, %0.1f, %0.1f do not form an Isoceles triangle\n", a, b, c);
+        break;
+    case 2:
+        /* Right angled (Sum of squares of two shorter sides = Sqaure of hypotenuse) */
+        if ((powf(a, 2) + powf(b, 2) == powf(c, 2)) ||
+            (powf(b, 2) + powf(c, 2) == powf(a, 2)) ||
+            (powf(a, 2) + powf(c, 2) == powf(b, 2)) )
+            printf("%0.1f, %0.1f, %0.1f are sides of Right angled triangle\n", a, b, c);
+        else 
+            printf("%0.1f, %0.1f, %0.1f do not form a Right angled triangle\n", a, b, c);
+        break;
+    case 3:
+        /* Equilateral triangle. Three sides are equal */
+        if ((a == b) && (a == c))
+            printf("Three sides are equal. Threfore sides of an Equilateral triangle\n");
+        else
+            printf("%0.1f, %0.1f, %0.1f do not form an Equilateral triangle\n", a, b, c);
+        break;
+    case 4:
+        /* Exit */
+        printf("Exiting the program\n");
+        break;
+    
+    default:
+        printf("%d is not a valid choice\n", choice);
+        break;
+    }
+
+    return 0;
+}
 ```
 <br>
 
