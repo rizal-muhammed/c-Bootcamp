@@ -68,7 +68,72 @@ int main()
     d. Division <br>
     e. Exit <br>
 ```
+#include <stdio.h>
 
+int main()
+{
+    int choice;
+    float a, b, result;
+    printf("Calculator\n");
+    printf("----------");
+
+    do
+    {
+        printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\n");
+        printf("\nEnter your choice\n\n");
+        scanf("%d", &choice);
+        
+        switch (choice)
+        {
+        case 1:
+            printf("Addition\n");
+            printf("--------\n");
+            printf("Enter two numbers to add(separated by space): \n");
+            scanf("%f %f", &a, &b);
+            result = a + b;
+            printf("\nThe sum of %.2f and %.2f = %.2f\n", a, b, result);
+            break;
+        case 2:
+            printf("Subtraction\n");
+            printf("-----------\n");
+            printf("Enter two numbers (separated by space): \n");
+            scanf("%f %f", &a, &b);
+            result = a - b;
+            printf("\n%.2f - %.2f = %.2f\n", a, b, result);
+            break;
+        case 3:
+            printf("Multiplication\n");
+            printf("--------------\n");
+            printf("Enter two numbers (separated by space): \n");
+            scanf("%f %f", &a, &b);
+            result = a * b;
+            printf("\n%.2f * %.2f = %.2f\n", a, b, result);
+            break;
+        case 4:
+            printf("Division\n");
+            printf("--------\n");
+            printf("Enter two numbers (separated by space): \n");
+            scanf("%f %f", &a, &b);
+
+            if (b != 0)
+            {
+                result = a / b;
+                printf("\n%.2f / %.2f = %.2f\n", a, b, result);
+            }
+            else
+                printf("Zero division error\n");
+            break;
+        case 5:
+            break;
+        
+        default:
+            printf("%d is not a valid choice\n", choice);
+            break;
+        }
+    } while (choice != 5);
+    
+    return 0;
+}
 ```
 <br>
 
