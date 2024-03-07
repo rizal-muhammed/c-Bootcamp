@@ -210,7 +210,33 @@ int main()
     System.out.println("invalid"); 
 ```
 ```
+#include <stdio.h>
 
+int main()
+{
+    int num;
+    printf("Program to print some messages based on your input\n");
+    printf("Enter a number: \n");
+    scanf("%d", &num);
+
+    switch (num)
+    {
+    case 1:
+        printf("good\n");
+        break;
+    case 2:
+        printf("better\n");
+        break;
+    case 3:
+        printf("best\n");
+        break;
+    
+    default:
+        printf("Invalid\n");
+        break;
+    }
+    return 0;
+}
 ```
 <br>
 
