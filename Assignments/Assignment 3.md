@@ -295,9 +295,9 @@ int main()
     printf("Enter a character: \n");
     a_char = getchar();
 
-    if (a_char >= 65 && a_char <= 90)
+    if (a_char >= 'A' && a_char <= 'Z')
         printf("%c is an Upper Case Character.\n", a_char);
-    else if (a_char >= 97 && a_char <= 122)
+    else if (a_char >= 'a' && a_char <= 'z')
         printf("%c is a Lower Case Character.\n", a_char);
     else
         printf("Neither Upper Case Nor Lower Case Character.\n");
