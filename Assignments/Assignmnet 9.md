@@ -348,6 +348,33 @@ number into a positive number using a switch statement.
 9. Program to Convert even number into its upper nearest odd number
 Switch Statement.
 ```
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    int num;
+    printf("Program to print the upper nearest odd number of an even number\n");
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    switch (num % 2 == 0)
+    {
+    case 0:
+        /* odd number */
+        printf("The upper nearest even number of %d is %d\n", num, num + 1);
+        break;
+    case 1:
+        /* even number */
+        printf("The %d is an even number\n", num);
+        break;
+    
+    default:
+        printf("%d is not a valid choice\n", num);
+        break;
+    }
+    return 0;
+}
 ```
 <br>
 
