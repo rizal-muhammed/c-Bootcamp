@@ -408,6 +408,57 @@ int main()
 
 10. C program to find all roots of a quadratic equation using switch case
 ```
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float a, b, c, discriminant, r1, r2, real_part, imaginary_part;
+
+    printf("Program to find the roots of a Quadratic equation ax^2 + bx + c = 0\n");
+    printf("Enter coefficients a, b, c : \n");
+    scanf("%f %f %f", &a, &b, &c);
+    
+    /*
+    If the discriminant is equal to zero (b2 – 4ac = 0), a, b, c are real numbers, a≠0, 
+    then the roots of the quadratic equation ax2 + bx + c = 0, are real and equal.
+    */
+    discriminant = powf(b, 2) - 4 * a * c;
+
+    switch (discriminant > 0)
+    {
+    case 1:
+        /* real distinct roots */
+        r1 = (-b + sqrt(discriminant)) / (2 * a) ;
+        r2 = (-b - sqrt(discriminant)) / (2 * a) ;
+
+        printf("The quadratic equation has real distinct roots, and they are %.2f and %.2f\n", r1, r2);
+        break;
+    case 0:
+        /* 
+        if discriminant is 0, then real and equal roots
+        if discriminant is negative, then complex roots */
+        if (discriminant == 0)
+        {
+            r1 = (-b + sqrt(discriminant)) / (2 * a) ;
+            printf("The quadratic equation has real equal roots, which is %.2f\n", r1);
+        }
+        else
+        {
+            real_part = -b / (2 *a);
+            imaginary_part = sqrt(-discriminant) / (2 * a);
+            printf("The roots are imaginary, and they are: "
+            "%.2f + %.2fi and %.2f - %.2fi\n", real_part, imaginary_part, real_part, imaginary_part);
+        }
+        break;
+    
+    default:
+        break;
+    }
+
+    return 0;
+
+}
 ```
 <br>
 
