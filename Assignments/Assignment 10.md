@@ -108,3 +108,34 @@ int main()
     return 0;
 }
 ```
+<br>
+
+6. Write a function to calculate the factorial of a number. (TSRS)
+```
+#include <stdio.h>
+
+float factorial(int N);
+
+float factorial(int n)
+{
+    float fact = 1;
+    
+    if (n == 0 || n == 1)
+        return 1;
+    for (int i = 1; i <= n; i++)
+        fact *= i;
+    
+    return fact;
+}
+
+int main()
+{
+    int N, fact;
+    printf("Program to calculate factorial of a number\n");
+    printf("Enter N: \n");
+    scanf("%d", &N);
+    fact = factorial(N);
+    printf("%d! = %d\n", N, fact);
+    return 0;
+}
+```
