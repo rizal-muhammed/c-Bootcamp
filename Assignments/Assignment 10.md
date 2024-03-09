@@ -84,3 +84,27 @@ int main()
 }
 
 ```
+<br>
+
+5. Write a function to print first N odd natural numbers. (TSRN)
+```
+#include <stdio.h>
+
+void first_n_odd_natural_nums(int);
+
+void first_n_odd_natural_nums(int n)
+{
+    for (int i = 1; i <= n; i += 2)
+        printf("%d\t", i);
+}
+
+int main()
+{
+    int N;
+    printf("Program to print first N odd natural numbers\n");
+    printf("Enter N: \n");
+    scanf("%d", &N);
+    first_n_odd_natural_nums(N);
+    return 0;
+}
+```
