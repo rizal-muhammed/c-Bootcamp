@@ -27,3 +27,32 @@ float area_of_circle(float r)
     return area;
 }
 ```
+<br>
+
+3. Write a function to check whether a given number is even or odd. Return 1 if the number is even, otherwise return 0. (TSRS)
+```
+#include <stdio.h>
+
+int is_even(int);
+
+int main()
+{
+    int num;
+    printf("Program to check if a given number is even or odd\n");
+    printf("Enter a number\n");
+    scanf("%d", &num);
+    if (is_even(num))
+        printf("%d is even\n", num);
+    else 
+        printf("%d is odd\n", num);
+    return 0;
+}
+
+int is_even(int n)
+{
+    if (n % 2 == 0)
+        return 1;
+    else 
+        return 0;
+}
+```
