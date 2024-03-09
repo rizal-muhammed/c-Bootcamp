@@ -56,3 +56,31 @@ int is_even(int n)
         return 0;
 }
 ```
+<br>
+
+4. Write a function to print first N natural numbers (TSRN)
+```
+#include <stdio.h>
+
+void first_N_natural_numbers(int);
+
+void first_N_natural_numbers(int N)
+{
+    int i;
+    printf("First %d natural numbers are\n", N);
+    printf("----------------------------\n");
+    for (i = 1; i <= N; i++)
+        printf("%d\t", i);
+}
+
+int main()
+{
+    int N;
+    printf("Program to print first N natural numbers\n");
+    printf("Enter N: \n");
+    scanf("%d", &N);
+    first_N_natural_numbers(N);
+    return 0;
+}
+
+```
