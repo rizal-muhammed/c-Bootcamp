@@ -270,4 +270,44 @@ int permutations(int n, int r)
 ```
 <br>
 
+9. Write a function to check whether a given number contains a given digit or not. (TSRS)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+bool contains(int, int);
+
+int main()
+{
+    int n, d;
+    printf("Program to check whether a number contains a digit\n");
+    printf("Enter number: \n");
+    scanf("%d", &n);
+    printf("Enter digit\n");
+    scanf("%d", &d);
+    if (contains(n, d))
+        printf("%d contains digit %d\n", n, d);
+    else
+        printf("%d doesn't contain digit %d\n", n, d);
+    return 0;
+}
+
+bool contains(int num, int digit)
+{
+    bool result = false;
+
+    do
+    {
+        result = ((num % 10) == digit);
+        if (result)
+            return result;
+        num = num / 10;
+    } while (num);
+
+    return result;
+}
+```
+<br>
+
+
 
