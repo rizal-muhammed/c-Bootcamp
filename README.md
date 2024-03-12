@@ -9,3 +9,4 @@
 7. [Iterative Control Statements(Part-2)](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%207.md)
 8. [Pattern Problems](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%208.md)
 9. [Switch Case Problems](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignmnet%209.md)
+10. [Functions in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2010.md)
