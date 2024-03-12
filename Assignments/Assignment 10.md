@@ -29,6 +29,39 @@ float area_of_circle(float r)
 ```
 <br>
 
+2. Write a function to calculate simple interest. (TSRS)
+```
+#include <stdio.h>
+
+float simple_interest(float, float, float);
+
+int main()
+{
+    float p, r, y, si;
+
+    printf("Program to calculate simple interest\n");
+    printf("Enter Principal: \n");
+    scanf("%f", &p);
+    printf("Enter rate or interest in percentage: \n");
+    scanf("%f", &r);
+    printf("Enter time(years): \n");
+    scanf("%f", &y);
+
+    si = simple_interest(p, r, y);
+    printf("Simple ineterst = %0.2f\n", si);
+
+    return 0;
+}
+
+float simple_interest(float p, float r, float y)
+{
+    float si;
+    si = (p * r * y) / 100;
+    return si;
+}
+```
+<br>
+
 3. Write a function to check whether a given number is even or odd. Return 1 if the number is even, otherwise return 0. (TSRS)
 ```
 #include <stdio.h>
