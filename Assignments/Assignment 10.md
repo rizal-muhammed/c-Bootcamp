@@ -1,3 +1,5 @@
+# Functions in C language
+
 1. Write a function to calculate the area of a circle. (TSRS)
 ```
 #include <stdio.h>
