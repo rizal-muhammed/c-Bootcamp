@@ -311,5 +311,53 @@ bool contains(int num, int digit)
 
 10. Write a function to print all prime factors of a given number. For example, if the number is 36 then your result should be 2, 2, 3, 3. (TSRN)
 ```
+#include <stdio.h>
+#include <stdbool.h>
+
+void print_prime_factors(int);
+bool is_prime(int);
+
+int main()
+{
+    int n;
+    printf("Program for prime factorization\n");
+    printf("Enter number: \n");
+    scanf("%d", &n);
+    printf("Prime factors of %d are\n", n);
+    printf("-----------------------\n");
+    print_prime_factors(n);
+    return 0;
+}
+
+void print_prime_factors(int num)
+{
+    while (!is_prime(num))
+    {
+        for (int i = 2; i <= num; i++)
+        {
+            if (is_prime(i) && (num % i == 0))
+            {
+                printf("%d\n", i);
+                num /= i;
+                break;
+            }
+        }
+        
+    }
+    printf("%d\n", num);
+}
+
+bool is_prime(int num)
+{
+    if (num <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
 
 ```
