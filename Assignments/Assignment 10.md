@@ -221,4 +221,53 @@ int combinations(int n, int r)
 ```
 <br>
 
+8. Write a function to calculate the number of arrangements one can make from n items and r selected at a time. (TSRS)
+```
+#include <stdio.h>
+#include <math.h>
+
+int permutations(int, int);
+
+int main()
+{
+    int n, r, p;
+    printf("Program to calculate permutations P(n, r)\n");
+    printf("Enter n: \n");
+    scanf("%d", &n);
+    printf("Enter r: \n");
+    scanf("%d", &r);
+
+    p = permutations(n, r);
+    printf("P(%d, %d) = %d\n", n, r, p);
+
+    return 0;
+}
+
+int permutations(int n, int r)
+{
+    /* P(n, r) = n! / (n - r)! */
+
+    /*
+    float       tgamma ( float num );
+
+    If num is a natural number, std::tgamma(num) is the factorial of num - 1. 
+    Many implementations calculate the exact integer-domain factorial if the argument 
+    is a sufficiently small integer. 
+
+    https://en.cppreference.com/w/cpp/numeric/math/tgamma
+    */
+
+    int n_fact, n_minus_r_fact, perms;
+
+    n_fact = (int)(tgamma((float)n) * n);
+    n_minus_r_fact = (int)(tgamma((float)(n - r)) * (n - r));
+
+    perms = n_fact / n_minus_r_fact;
+
+    return perms;
+
+}
+```
+<br>
+
 
