@@ -120,6 +120,51 @@ bool is_prime(int num)
 ```
 <br>
 
+7. Write a function to print first N terms of Fibonacci series (TSRN)
+```
+#include <stdio.h>
+
+void print_fibonacci(int);
+
+int main()
+{
+    int N;
+
+    printf("Program to generate first N terms of fibonacci series\n");
+    printf("Enter N\n");
+    scanf("%d", &N);
+
+    print_fibonacci(N);
+
+    return 0;
+}
+
+void print_fibonacci(int n)
+{
+    int count = 0, a = 0, b = 1;
+    if (n == 1)
+        printf("%d\n", a);
+    else if (n == 2)
+        printf("%d\t%d\n", a, b);
+    else if (n > 2)
+    {
+        printf("%d\t%d", a, b);
+        for(int i = 2; i < n; i++)
+        {
+            printf("\t%d", a + b);
+            if (i%2 == 0)
+                a = a + b;
+            else
+                b = a + b;
+        }
+        printf("\n");
+    }
+    else  
+        printf("%d is not a valid N\n", n);
+}
+```
+<br>
+
 9. Write a program in C to find the square of any number using the function.
 ```
 #include <stdio.h>
