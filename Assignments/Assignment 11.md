@@ -312,6 +312,71 @@ void print_fibonacci(int n)
 ```
 <br>
 
+8. Write a function to print PASCAL Triangle. (TSRN)
+```
+#include <stdio.h>
+#include <math.h>
+
+void print_pascals_triangle(int);
+int combination(int, int);
+int factorial(int);
+
+int main()
+{
+    int rows;
+    printf("Program to print Pascal's triangle\n");
+    printf("Enter number of rows: \n");
+    scanf("%d", &rows);
+    print_pascals_triangle(rows);
+    return 0;
+}
+
+void print_pascals_triangle(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n-1 - i; j++)
+            printf(" ");
+        for (int r = 0; r <= i; r++)
+        {
+            printf("%d ", combination(i, r));
+        }
+        printf("\n");
+    }
+}
+
+int combination(int n, int r)
+{
+    /* C(n, r) = n! / (r! * (n-r)!)*/
+    int n_fact, r_fact, n_r_fact, comb;
+    n_fact = factorial(n);
+    r_fact = factorial(r);
+    n_r_fact = factorial(n-r);
+
+    comb = n_fact / (r_fact * n_r_fact);
+    return comb;
+}
+
+int factorial(int n)
+{
+    int fact = 1;
+    
+    if (n < 0)
+        return 0;
+    else if (n <= 1)
+        return 1;
+    else
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            fact *= i;
+        }
+        return fact;
+    }
+}
+```
+<br>
+
 9. Write a program in C to find the square of any number using the function.
 ```
 #include <stdio.h>
