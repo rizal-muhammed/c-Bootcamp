@@ -81,5 +81,45 @@ int get_hcf(int a, int b)
 ```
 <br>
 
+3. Write a function to check whether a given number is Prime or not. (TSRS)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+bool is_prime(int);
+
+int main()
+{
+    int num;
+    printf("Program to check whether a number is prime?\n");
+    printf("Enter your number\n");
+    scanf("%d", &num);
+
+    if (is_prime(num))
+        printf("%d is prime\n", num);
+    else
+        printf("%d is not prime\n", num);
+
+
+    return 0;
+}
+
+
+bool is_prime(int num)
+{
+    if (num <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+```
+<br>
+
+
 
 
