@@ -179,46 +179,53 @@ int main()
 7. Write a function to calculate the number of combinations one can make from n items and r selected at a time. (TSRS)
 ```
 #include <stdio.h>
-#include <math.h>
 
-int combinations(int, int);
+int combination(int, int);
+int factorial(int);
 
 int main()
 {
-    int n, r, c;
-    printf("Program to calculate combinations\n");
+    int n, r, comb;
+    printf("Program to calculate number of combinations C(n, r)\n");
     printf("Enter n: \n");
     scanf("%d", &n);
     printf("Enter r: \n");
     scanf("%d", &r);
 
-    c = combinations(n, r);
-    printf("C(%d, %d) = %d\n", n, r, c);
+    comb = combination(n, r);
+    printf("C(%d, %d) = %d\n", n, r, comb);
 
     return 0;
 }
 
-int combinations(int n, int r)
+int combination(int n, int r)
 {
-    /* C(n,r)=n!/r!(n-r)! */ 
+    /* C(n, r) = n! / (r! * (n-r)!)*/
+    int n_fact, r_fact, n_r_fact, comb;
+    n_fact = factorial(n);
+    r_fact = factorial(r);
+    n_r_fact = factorial(n-r);
 
-    /*
-    float       tgamma ( float num );
-
-    If num is a natural number, std::tgamma(num) is the factorial of num - 1. 
-    Many implementations calculate the exact integer-domain factorial if the argument 
-    is a sufficiently small integer. 
-
-    https://en.cppreference.com/w/cpp/numeric/math/tgamma
-    */
-    int n_fact, r_fact, n_minus_r_fact, comb;
-
-    n_fact = (int)(tgamma((float)n) * n);
-    r_fact = (int)(tgamma((float)r) * r);
-    n_minus_r_fact = (int)(tgamma((float)(n - r)) * (n - r));
-
-    comb = n_fact / (r_fact * n_minus_r_fact);
+    comb = n_fact / (r_fact * n_r_fact);
     return comb;
+}
+
+int factorial(int n)
+{
+    int fact = 1;
+    
+    if (n < 0)
+        return 0;
+    else if (n <= 1)
+        return 1;
+    else
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            fact *= i;
+        }
+        return fact;
+    }
 }
 ```
 <br>
