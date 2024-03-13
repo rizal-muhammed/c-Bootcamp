@@ -120,6 +120,29 @@ bool is_prime(int num)
 ```
 <br>
 
+9. Write a program in C to find the square of any number using the function.
+```
+#include <stdio.h>
 
+int square(int);
+
+int main()
+{
+    int num, num_squared;
+    printf("Program to calculate square of a number\n");
+    printf("Enter number: \n");
+    scanf("%d", &num);
+
+    num_squared = square(num);
+    printf("%d^2 = %d\n", num, num_squared);
+
+    return 0;
+}
+
+int square(int a)
+{
+    return a * a;
+}
+```
 
 
