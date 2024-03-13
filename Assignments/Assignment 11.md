@@ -165,6 +165,57 @@ bool is_prime(int num)
 ```
 <br>
 
+5. Write a function to print first N prime numbers (TSRN)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+void print_first_N_primes(int);
+bool is_prime(int);
+
+int main()
+{
+    int N;
+    printf("Program to print first N prime numbers\n");
+    printf("Enter N: \n");
+    scanf("%d", &N);
+
+    print_first_N_primes(N);
+    return 0;
+}
+
+void print_first_N_primes(int n)
+{
+    int count;
+    printf("First %d prime numbers are: \n", n);
+
+    for (int i = 2; n >= 1; i++)
+    {
+        if (is_prime(i))
+        {
+            printf("%d\n", i);
+            n--;
+        }
+    }
+    
+    
+}
+
+bool is_prime(int num)
+{
+    if (num <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+```
+<br>
+
 6. Write a function to print all Prime numbers between two given numbers. (TSRN)
 ```
 #include <stdio.h>
