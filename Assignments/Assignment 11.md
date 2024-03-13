@@ -336,5 +336,57 @@ int square(int a)
     return a * a;
 }
 ```
+<br>
 
+10. Write a program in C to find the sum of the series 1! /1+2!/2+3!/3+4!/4+5!/5 using the function.
+```
+#include <stdio.h>
 
+int sum_of_series(int);
+int factorial(int);
+
+int main()
+{
+    int n, sum;
+    printf("Program to print the sum of series 1!/1 + 2!/2 + 3!/3 + 4!/4 + 5!/5 +......+ n!/n\n");
+    printf("Enter n: \n");
+    scanf("%d", &n);
+    sum = sum_of_series(n);
+
+    for (int i = 1; i <= n; i++)
+    {
+        if (i < n)
+            printf("%d!/%d + ", i, i);
+        else
+            printf("%d!/%d = %d\n", i, i, sum);
+    }
+}
+
+int sum_of_series(int n)
+{
+    int sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sum += (factorial(i) / i);
+    }
+    return sum;
+}
+
+int factorial(int n)
+{
+    int fact = 1;
+    
+    if (n < 0)
+        return 0;
+    else if (n <= 1)
+        return 1;
+    else
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            fact *= i;
+        }
+        return fact;
+    }
+}
+```
