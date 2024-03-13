@@ -120,6 +120,57 @@ bool is_prime(int num)
 ```
 <br>
 
+6. Write a function to print all Prime numbers between two given numbers. (TSRN)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+void print_prime_between_a_and_b(int a, int b);
+bool is_prime(int);
+
+int main()
+{
+    int a, b;
+    printf("Program to print prime numbers between given two numbers\n");
+    printf("Enter numbers (separated by space): \n");
+    scanf("%d %d", &a, &b);
+
+    print_prime_between_a_and_b(a, b);
+
+    return 0;
+}
+
+void print_prime_between_a_and_b(int a, int b)
+{
+    if (a >= b)
+        printf("%d >= %d\n", a, b);
+    else
+    {
+        printf("Prime numbers between %d and %d are: \n", a, b);
+        for (int i = a; i <= b; i++)
+        {
+            if (is_prime(i))
+                printf("%d\t", i);
+        }
+    }
+    
+}
+
+bool is_prime(int num)
+{
+    if (num <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+```
+<br>
+
 7. Write a function to print first N terms of Fibonacci series (TSRN)
 ```
 #include <stdio.h>
