@@ -120,6 +120,51 @@ bool is_prime(int num)
 ```
 <br>
 
+4. Write a function to find the next prime number of a given number. (TSRS)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+int next_prime(int);
+bool is_prime(int);
+
+int main()
+{
+    int num, np;
+    printf("Program to find next prime number of a given number\n");
+    printf("Enter number: \n");
+    scanf("%d", &num);
+    np = next_prime(num);
+
+    printf("Next prime number after %d is %d\n", num, np);
+}
+
+int next_prime(int n)
+{
+    int np = n;
+    do
+    {
+        np++;
+    } while (!is_prime(np));
+    
+    return np;
+}
+
+bool is_prime(int num)
+{
+    if (num <= 1)
+        return false;
+    
+    for (int i = 2; i * i <= num; i++)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+```
+<br>
+
 6. Write a function to print all Prime numbers between two given numbers. (TSRN)
 ```
 #include <stdio.h>
