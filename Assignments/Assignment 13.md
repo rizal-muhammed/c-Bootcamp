@@ -227,6 +227,37 @@ int digits_count(int n)
 ```
 <br>
 
+10. Write a program in C to calculate the power of any number using recursion.
+```
+#include <stdio.h>
 
+int powerf(int, int);
 
+int main()
+{
+    int b, e, result;
+
+    printf("Program to compute the value of base raised to the power exponent(b^r).\n");
+    printf("Enter base: ");
+    scanf("%d", &b);
+    printf("Enter exponent: ");
+    scanf("%d", &e);
+
+    result = powerf(b, e);
+    printf("%d^%d = %d\n", b, e, result);
+
+    return 0;
+
+}
+
+int powerf(int base, int exponent)
+{
+    if (exponent > 0)
+    {
+        return powerf(base, exponent - 1) * base;
+    }
+    return 1;
+}
+```
+<br>
 
