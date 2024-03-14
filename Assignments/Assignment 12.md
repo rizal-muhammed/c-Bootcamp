@@ -222,6 +222,38 @@ void print_binary(int n)
 ```
 <br>
 
+9. Write a recursive function to print octal of a given decimal number
+```
+#include <stdio.h>
+
+void print_octal(int);
+
+int main()
+{
+    int n;
+
+    printf("Program to print octal of a given decimal number\n");
+    printf("Enter decimal number: ");
+    scanf("%d", &n);
+
+    print_octal(n);
+    return 0;
+}
+
+void print_octal(int n)
+{
+    int od;
+
+    if (n > 0)
+    {
+        od = n % 8;
+        print_octal(n / 8);
+        printf("%d", od);
+    }
+}
+```
+<br>
+
 10. Write a recursive function to print reverse of a given number
 ```
 #include <stdio.h>
