@@ -161,4 +161,40 @@ int sum_digits(int n)
 ```
 <br>
 
+6. Write a recursive function to calculate factorial of a given number
+```
+#include <stdio.h>
+
+int factorial(int);
+
+int main()
+{
+    int N, fact;
+
+    printf("Program to calculate factorial of N\n");
+    printf("Enter N: ");
+    scanf("%d", &N);
+
+    fact = factorial(N);
+    printf("%d! = %d\n", N, fact);
+
+    return 0;
+}
+
+int factorial(int n)
+{
+    if (n > 0)
+    {
+        return factorial(n - 1) * n;
+    }
+    else if (n == 0)
+        return 1;
+    
+    return 0;
+}
+```
+<br>
+
+
+
 
