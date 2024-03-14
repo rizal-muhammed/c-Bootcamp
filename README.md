@@ -11,3 +11,4 @@
 9. [Switch Case Problems](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignmnet%209.md)
 10. [Functions in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2010.md)
 11. [More on functions in C](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2011.md)
+12. [Recursion in C language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2012.md)
