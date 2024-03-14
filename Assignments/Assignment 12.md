@@ -160,5 +160,35 @@ void print_odd_N(int n, int c)
 ```
 <br>
 
+7. Write a recursive function to print squares of first N natural numbers
+```
+#include <stdio.h>
+
+void squaresN(int);
+
+int main()
+{
+    int N;
+
+    printf("Program to print squares of first N natural numbers\n");
+    printf("Enter N: ");
+    scanf("%d", &N);
+    squaresN(N);
+
+    return 0;
+}
+
+void squaresN(int n)
+{
+    if (n > 0)
+    {
+        squaresN(n - 1);
+        printf("%d\t", n * n);
+    }
+}
+
+```
+<br>
+
 
 
