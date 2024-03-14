@@ -190,6 +190,38 @@ void squaresN(int n)
 ```
 <br>
 
+8. Write a recursive function to print binary of a given decimal number
+```
+#include <stdio.h>
+
+void print_binary(int);
+
+int main()
+{
+    int n;
+
+    printf("Program to print binary of a given decimal number\n");
+    printf("Enter decimal number: ");
+    scanf("%d", &n);
+
+    print_binary(n);
+    return 0;
+}
+
+void print_binary(int n)
+{
+    int bd;
+
+    if (n > 0)
+    {
+        bd = n % 2;
+        print_binary(n / 2);
+        printf("%d", bd);
+    }
+}
+```
+<br>
+
 10. Write a recursive function to print reverse of a given number
 ```
 #include <stdio.h>
