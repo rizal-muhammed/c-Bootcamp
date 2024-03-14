@@ -190,5 +190,57 @@ void squaresN(int n)
 ```
 <br>
 
+10. Write a recursive function to print reverse of a given number
+```
+#include <stdio.h>
+#include <math.h>
 
+int reverse(int);
+int len(int);
+
+int main()
+{
+    int n, n_reverse;
+
+    printf("Program to print reverse of a given number\n");
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    n_reverse = reverse(n);
+    printf("The reverse of %d is %d\n", n, n_reverse);
+
+    return 0;
+}
+
+int reverse(int n)
+{
+    int ld, n_len;
+    n_len = len(n);
+
+    if (n_len > 1)
+    {
+        ld = n % 10;
+        n /= 10;
+        return ld * (powf(10, n_len - 1)) + reverse(n);
+    }
+    else if (len(n) == 1)
+        return n;
+    return 0;
+}
+
+int len(int n)
+{
+    int l = 0;
+
+    do
+    {
+        l++;
+        n /= 10;
+    } while (n);
+    
+
+    return l;
+}
+```
+<br>
 
