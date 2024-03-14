@@ -133,3 +133,32 @@ void print_odd_N(int n, int c)
 ```
 <br>
 
+6. Write a recursive function to print first N even natural numbers in reverse order
+```
+#include <stdio.h>
+
+void print_odd_N(int, int);
+
+int main()
+{
+    int N ;
+    printf("Program to print first N even natural numbers in reverse order\n");
+    printf("Enter N: ");
+    scanf("%d", &N);
+    print_odd_N(N, 2);
+    return 0;
+}
+
+void print_odd_N(int n, int c)
+{
+    if (n > 0)
+    {
+        print_odd_N(n - 1, c + 2);
+        printf("%d\t", c);
+    }
+}
+```
+<br>
+
+
+
