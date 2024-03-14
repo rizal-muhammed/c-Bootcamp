@@ -112,7 +112,7 @@ void print_odd_N(int n, int c)
 ```
 #include <stdio.h>
 
-void print_odd_N(int, int);
+void print_even_N(int, int);
 
 int main()
 {
@@ -124,12 +124,12 @@ int main()
     return 0;
 }
 
-void print_odd_N(int n, int c)
+void print_even_N(int n, int c)
 {
     if (n > 0)
     {
         printf("%d\t", c);
-        print_odd_N(n - 1, c + 2);
+        print_even_N(n - 1, c + 2);
     }
 }
 ```
