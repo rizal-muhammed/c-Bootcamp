@@ -115,7 +115,7 @@ void print_odd_N(int, int);
 int main()
 {
     int N ;
-    printf("Program to print first N odd natural numbers in reverse order\n");
+    printf("Program to print first N even natural numbers\n");
     printf("Enter N: ");
     scanf("%d", &N);
     print_odd_N(N, 2);
