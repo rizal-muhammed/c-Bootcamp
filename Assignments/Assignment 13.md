@@ -195,6 +195,38 @@ int factorial(int n)
 ```
 <br>
 
+9. Write a program in C to count the digits of a given number using recursion.
+```
+#include <stdio.h>
+
+int digits_count(int);
+
+int main()
+{
+    int n, digits;
+
+    printf("Program to count the digits of a given number\n");
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    digits = digits_count(n);
+    printf("%d contain %d digits\n", n, digits);
+    return 0;
+}
+
+int digits_count(int n)
+{
+    int count = 0;
+
+    if (n > 0)
+    {
+        return count += digits_count(n / 10) + 1;
+    }
+    return 0;
+}
+```
+<br>
+
 
 
 
