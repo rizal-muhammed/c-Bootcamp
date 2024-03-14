@@ -95,5 +95,36 @@ int sum_even_N(int n, int c)
 ```
 <br>
 
+4. Write a recursive function to calculate sum of squares of first n natural numbers
+```
+#include <stdio.h>
+
+int sum_squares_N(int);
+
+int main()
+{
+    int N, sum;
+
+    printf("Program to calculate sum of squares of first N natural numbers\n");
+    printf("Enter N: ");
+    scanf("%d", &N);
+
+    sum = sum_squares_N(N);
+    printf("Sum of square of first %d natural numbers = %d\n", N, sum);
+    return 0;
+}
+
+int sum_squares_N(int n)
+{
+    int sum = 0;
+
+    if (n > 0)
+    {
+        return sum += sum_squares_N(n - 1) + n * n;
+    }
+    return 0;
+}
+```
+<br>
 
 
