@@ -127,4 +127,38 @@ int sum_squares_N(int n)
 ```
 <br>
 
+5. Write a recursive function to calculate sum of digits of a given number
+```
+#include <stdio.h>
+
+int sum_digits(int);
+
+int main()
+{
+    int n, sum;
+
+    printf("Program to calculate the sum of digits of a given number\n");
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    sum = sum_digits(n);
+    printf("Sum of digits of %d = %d\n", n, sum);
+
+    return 0;
+}
+
+int sum_digits(int n)
+{
+    int ld;
+
+    if (n > 0)
+    {
+        ld = n % 10;
+        return ld + sum_digits(n / 10);
+    }
+    return 0;
+}
+```
+<br>
+
 
