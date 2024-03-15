@@ -195,6 +195,46 @@ int factorial(int n)
 ```
 <br>
 
+8. Write a recursive function to print first N terms of Fibonacci series
+```
+#include <stdio.h>
+
+int fib_n(int);
+void print_fib(int);
+
+int main()
+{
+    int n, a;
+
+    printf("Program to print first N elements of fibonacii series\n");
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    print_fib(n);
+    return 0;
+}
+
+void print_fib(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d\t", fib_n(i));
+    }
+    
+}
+
+int fib_n(int n)
+{
+    if (n == 0 || n == 1)
+        return n;
+    if (n > 1)
+        return fib_n(n - 1) + fib_n(n - 2);
+    return 0;
+}
+
+```
+<br>
+
 9. Write a program in C to count the digits of a given number using recursion.
 ```
 #include <stdio.h>
