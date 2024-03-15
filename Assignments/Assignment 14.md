@@ -141,6 +141,48 @@ int main()
 ```
 <br>
 
+6. Write a program to sort elements of an array of size 10. Take array values from the user.
+```
+#include <stdio.h>
+
+#define COUNT 10
+
+int main()
+{
+    int i, nums[COUNT], max, temp;
+
+    printf("Program to sort elements of an array\n");
+    
+    printf("Enter 10 numbers: \n");
+    for (i = 0; i < COUNT; i++)
+        scanf("%d", &nums[i]);
+    
+    for (int j = 0; j < COUNT - 1; j++)
+    {
+        for (i = 0; i < COUNT - 1 - j; i++)
+        {
+            if (nums[i] > nums[i + 1])
+            {
+                temp = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted array\n");
+    printf("------------\n");
+    for (i = 0; i < COUNT; i++)
+        printf("%d\t", nums[i]);
+    
+    
+    return 0;
+}
+
+
+```
+<br>
+
 10. Write a program in C to copy the elements of one array into another array.Take array values from the user.
 ```
 #include <stdio.h>
