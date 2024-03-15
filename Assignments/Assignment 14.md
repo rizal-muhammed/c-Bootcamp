@@ -141,3 +141,26 @@ int main()
 ```
 <br>
 
+10. Write a program in C to copy the elements of one array into another array.Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int nums[10], arr[10];
+    int i;
+
+    printf("Enter 10 numbers: \n");
+    for (i = 0; i < 10; i++)
+        scanf("%d", &nums[i]);
+    
+    for (i = 0; i < 10; i++)
+        arr[i] = nums[i];
+
+    for (i = 0; i < 10; i++)
+        printf("%d\n", arr[i]);
+
+    return 0;
+}
+```
+<br>
