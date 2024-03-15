@@ -83,3 +83,32 @@ int main()
 ```
 <br>
 
+4. Write a program to find the greatest number stored in an array of size 10. Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int nums[10], max;
+    int i;
+
+    printf("Program to calculate the greatest among 10 numbers\n");
+    
+    printf("Enter 10 numbers\n");
+    for (i = 0; i < 10; i++)
+        scanf("%d", &nums[i]);
+    
+    max = nums[0];
+    for (i = 1; i < 10; i++)
+    {
+        if (nums[i] > max)
+            max = nums[i];
+    }
+    
+    printf("The gretest element is %d\n", max);
+
+    return 0;
+}
+```
+<br>
+
