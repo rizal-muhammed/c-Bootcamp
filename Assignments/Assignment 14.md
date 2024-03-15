@@ -52,3 +52,34 @@ int main()
 ```
 <br>
 
+3. Write a program to calculate the sum of all even numbers and sum of all odd numbers, which are stored in an array of size 10. Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int odd_sum, even_sum = 0, nums[10];
+    int i;
+
+    printf("Program to calculate the sum of all even numbers and sum of all odd numbers of 10 given numbers\n");
+    
+    printf("Enter 10 numbers\n");
+    for (i = 0; i < 10; i++)
+        scanf("%d", &nums[i]);
+    
+    for (i = 0; i < 10; i++)
+    {
+        if (nums[i] % 2 == 0)
+            even_sum += nums[i];
+        else
+            odd_sum += nums[i];
+    }
+    
+    printf("Sum of even numbers = %d\n", even_sum);
+    printf("Sum of odd numbers = %d\n", odd_sum);
+
+    return 0;
+}
+```
+<br>
+
