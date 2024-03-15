@@ -230,6 +230,57 @@ int main()
 ```
 <br>
 
+8. Write a program to find the second smallest number in an array.Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int n, i, min, second_min;
+    printf("Program to find second smallest elements in an array of n elements\n");
+    printf("Enter n: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter %d numbers\n", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    
+    for (i = 0; i < n; i++)
+    {
+        if (i == 0)
+            min = arr[i];
+        else if(i == 1)
+        {
+            if (arr[i] < min)
+            {
+                second_min = min;
+                min = arr[i];
+            }
+            else
+            {
+                second_min = arr[i];
+            }
+        }
+        else if(arr[i] < second_min || arr[i] < min)
+        {
+            if (arr[i] < second_min && arr[i] < min)
+            {
+                second_min = min;
+                min = arr[i];
+            }
+            else
+            {
+                second_min = arr[i];
+            }
+        }
+    }
+    
+    printf("Second smallest element = %d\n", second_min);
+    return 0;
+}
+```
+<br>
+
 10. Write a program in C to copy the elements of one array into another array.Take array values from the user.
 ```
 #include <stdio.h>
