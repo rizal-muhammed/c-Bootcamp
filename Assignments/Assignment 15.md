@@ -106,6 +106,50 @@ int main()
 ```
 <br>
 
+5. Write a function to find the first occurrence of adjacent duplicate values in the array. Function has to return the value of the element.
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+int adj_duplicates(int arr[], int size)
+{
+    /* Returns index of duplicate adjacent element if exists, else return -1 */
+    for (int i = 0; i < size - 1; i++)
+    {
+        if (arr[i] == arr[i + 1])
+        {
+            return i;
+        }
+    }
+    return -1;
+    
+}
+
+int main()
+{
+    int n , idx;
+    printf("Program to print element of first occurrence of adjacent duplicates in n elements array\n");
+    printf("Enter n: \n");
+    scanf("%d", &n);
+    int nums[6] = {0, 0, 3, 4, 4, 5};
+
+    printf("Enter %d numbers: \n", n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &nums[i]);
+    
+    idx = adj_duplicates(nums, n);
+
+    if (idx != -1)
+        printf("First occured adjascent duplicate element = %d\n", nums[idx]);
+    else 
+        printf("No adjacent duplicates\n");
+    
+    return 0;
+}
+
+```
+<br>
+
 6. Write a function in C to read n number of values in an array and display it in reverse order.
 ```
 #include <stdio.h>
