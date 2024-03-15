@@ -281,6 +281,33 @@ int main()
 ```
 <br>
 
+9. Write a program in C to read n number of values in an array and display it in reverse order. Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("program to read n number of values and display it in reverse order\n");
+    printf("Enter n: ");
+    scanf("%d", &n);
+    int nums[n];
+    printf("Enter %d numbers: \n", n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &nums[i]);
+
+    printf("Elements in reverse order\n");
+    for (int i = n - 1; i >= 0; i--)
+    {
+        printf("%d\t", nums[i]);
+    }
+    
+    
+    return 0;
+}
+```
+<br>
+
 10. Write a program in C to copy the elements of one array into another array.Take array values from the user.
 ```
 #include <stdio.h>
