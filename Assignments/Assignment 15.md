@@ -56,3 +56,52 @@ int main()
 }
 ```
 <br>
+
+3. Write a function to sort an array of any size. (TSRS)
+```
+#include <stdio.h>
+
+#define COUNT 5
+
+void sort(int arr[], int size)
+{
+    int temp;
+
+    for (int j = 0; j < COUNT - 1; j++)
+    {
+        for (int i = 0; i < COUNT - 1 - j; i++)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int i, nums[COUNT];
+    int size = sizeof(nums) / sizeof(nums[0]);
+
+    printf("Program to sort elements of an array\n");
+    
+    printf("Enter %d numbers: \n", COUNT);
+    for (i = 0; i < COUNT; i++)
+        scanf("%d", &nums[i]);
+    
+    sort(nums, size);
+
+    printf("Sorted array\n");
+    printf("------------\n");
+    for (i = 0; i < COUNT; i++)
+        printf("%d\t", nums[i]);
+    
+    
+    return 0;
+}
+
+```
+<br>
