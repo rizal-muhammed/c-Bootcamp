@@ -112,3 +112,32 @@ int main()
 ```
 <br>
 
+5. Write a program to find the smallest number stored in an array of size 10. Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int nums[10], min;
+    int i;
+
+    printf("Program to calculate the smallest among 10 numbers\n");
+    
+    printf("Enter 10 numbers\n");
+    for (i = 0; i < 10; i++)
+        scanf("%d", &nums[i]);
+    
+    min = nums[0];
+    for (i = 1; i < 10; i++)
+    {
+        if (nums[i] < min)
+            min = nums[i];
+    }
+    
+    printf("The smallest element is %d\n", min);
+
+    return 0;
+}
+```
+<br>
+
