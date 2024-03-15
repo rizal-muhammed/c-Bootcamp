@@ -195,6 +195,63 @@ int factorial(int n)
 ```
 <br>
 
+7. Write a recursive function to calculate HCF of two numbers
+```
+#include <stdio.h>
+
+int find_hcf(int, int);
+int abs(int);
+int maxf(int, int);
+
+int main()
+{
+    int a, b, hcf;
+
+    printf("Program to find HCF(Highest Common Factor) of two numbers\n");
+    printf("Enter two numbers(separated by space)\n");
+    scanf("%d %d", &a, &b);
+
+    hcf = find_hcf(a, b);
+    printf("HCF(%d, %d) = %d\n", a, b, hcf);
+
+    return 0;
+}
+
+int find_hcf(int a, int b)
+{
+    int abs_a, abs_b, max, hcf = 1;
+
+    abs_a = abs(a);
+    abs_b = abs(b);
+    max = maxf(a, b);
+
+    /* Factor method to compute HCF of two numbers */
+    if (abs_a == abs_b)
+        return abs_a;
+    else
+    {
+        for (int i = 2; i <= max/2 + 1; i++)
+        {
+            if (abs_a % i == 0 && abs_b % i == 0)
+                hcf = i * find_hcf(abs_a/i, abs_b/i);
+        }
+        return hcf;
+    }
+    return 1;
+}
+
+int abs(int n)
+{
+   return n < 0? -1 * n : n;
+}
+
+int maxf(int a, int b)
+{
+    return a > b? a : b;
+}
+```
+<br>
+
 8. Write a recursive function to print first N terms of Fibonacci series
 ```
 #include <stdio.h>
