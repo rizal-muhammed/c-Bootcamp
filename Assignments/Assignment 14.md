@@ -183,6 +183,53 @@ int main()
 ```
 <br>
 
+7. Write a program to find second largest in an array.Take array values from the user.
+```
+#include <stdio.h>
+
+int main()
+{
+    int n, i, m1, m2;
+    printf("Program to find second largest elements in an array of n elements\n");
+    printf("Enter n: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter %d numbers\n", n);
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    
+    for (i = 0; i < n; i++)
+    {
+        if (i == 0)
+            m1 = arr[i];
+        else if(i == 1)
+        {
+            if (arr[i] > m1)
+            {
+                m2 = m1;
+                m1 = arr[i];
+            }
+        }
+        else if(arr[i] > m2 || arr[i] > m1)
+        {
+            if (arr[i] > m2 && arr[i] > m1)
+            {
+                m2 = m1;
+                m1 = arr[i];
+            }
+            else
+            {
+                m2 = arr[i];
+            }
+        }
+    }
+    
+    printf("Second largest element = %d\n", m2);
+    return 0;
+}
+```
+<br>
+
 10. Write a program in C to copy the elements of one array into another array.Take array values from the user.
 ```
 #include <stdio.h>
