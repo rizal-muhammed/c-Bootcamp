@@ -105,3 +105,34 @@ int main()
 
 ```
 <br>
+
+6. Write a function in C to read n number of values in an array and display it in reverse order.
+```
+#include <stdio.h>
+
+void print_reverse(int arr[], int n)
+{
+    printf("Elements in reverse order\n");
+    for (int i = n - 1; i >= 0; i--)
+    {
+        printf("%d\t", arr[i]);
+    }
+}
+
+int main()
+{
+    int n;
+    printf("program to read n number of values and display it in reverse order\n");
+    printf("Enter n: ");
+    scanf("%d", &n);
+    int nums[n];
+    printf("Enter %d numbers: \n", n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &nums[i]);
+
+    print_reverse(nums, n);
+
+    return 0;
+}
+```
+<br>
