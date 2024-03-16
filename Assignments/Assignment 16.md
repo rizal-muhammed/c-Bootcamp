@@ -196,7 +196,7 @@ int main()
 ```
 <br>
 
-4. Write a program in C to find the sum of right diagonals of a matrix.
+5. Write a program in C to find the sum of left diagonals of a matrix.
 ```
 #include <stdio.h>
 
