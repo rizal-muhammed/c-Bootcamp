@@ -106,6 +106,99 @@ int main()
 ```
 <br>
 
+4. Write a function to rotate an array by n position in d direction. The d is an indicative value for left or right. (For example, if array of size 5 is [32, 29, 40, 12, 70]; n is 2 and d is left, then the resulting array after left rotation 2 times is [40, 12, 70, 32, 29] )
+```
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+void rotate_array(int a[], int, int, int);
+void rotate_left(int a[], int);
+void rotate_right(int a[], int);
+
+void rotate_array(int a[], int n, int d, int size)
+{
+    if (d == -1)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            rotate_left(a, size); 
+        }
+    }
+    else if (d == 1)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            rotate_right(a, size); 
+        }
+    }
+}
+
+void rotate_left(int a[], int size)
+{
+    int j = 0;
+    int temp = a[j];
+    for (int i = 1; i < size; i++, j++)
+    {
+        a[j] = a[i];
+    }
+    a[j] = temp;
+}
+
+void rotate_right(int a[], int size)
+{
+    int i = size, j = size - 1;
+    int temp = a[j];
+    for (; i > 0; i--, j--)
+    {
+        a[i] = a[j];
+    }
+    a[i] = temp;
+}
+
+int main()
+{
+    printf("Program to rotate an array by n positions in d direction\n");
+    int arr[] = {32, 29, 40, 12, 70, 34, 22, 10};
+    int n, d = 0; 
+    char direction[6];
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Enter n: ");
+    if (scanf("%d", &n) != 1)
+    {
+        printf("Invalid input\n");
+        return 1;
+    }
+    while (getchar() != '\n');
+
+    printf("Enter direction: 'left' or 'right' :  ");
+    fflush (stdout);
+    fgets(direction, sizeof(direction), stdin);
+    direction[strcspn(direction, "\n")] = '\0'; 
+    puts(direction);
+    if (strcmp(direction, "left") == 0)
+        d = -1;
+    else if (strcmp(direction, "right") == 0)
+        d = 1;
+    else
+    {
+        printf("Invalid input\n");
+        return 1;
+    }
+    
+    rotate_array(arr, n, d, size);
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\t", arr[i]);
+    }
+    
+    return 0;
+}
+```
+<br>
+
 5. Write a function to find the first occurrence of adjacent duplicate values in the array. Function has to return the value of the element.
 ```
 #include <stdio.h>
