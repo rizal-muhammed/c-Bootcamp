@@ -87,15 +87,19 @@ void transpose(int arr[][3], int arr_t[][3], int, int);
 
 void transpose(int arr[][3], int arr_t[][3], int rows, int cols)
 {
-    for (int i = 0; i < rows; i++)
+    if (rows == cols)
     {
-        for (int j = 0; j < cols; j++)
+        for (int i = 0; i < rows; i++)
         {
-            arr_t[i][j] = arr[j][i];
+            for (int j = 0; j < cols; j++)
+            {
+                arr_t[i][j] = arr[j][i];
+            }
+            
         }
-        
     }
-    
+    else
+        printf("Not a sqaure matrix. Transpose doesn't exists\n");
 }
 
 void print_matrix(int arr[][3], int rows, int cols)
