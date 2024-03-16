@@ -138,3 +138,61 @@ int main()
 ```
 <br>
 
+4. Write a program in C to find the sum of right diagonals of a matrix.
+```
+#include <stdio.h>
+
+# define ROWS 3
+# define COLS 3
+
+void print_matrix(int arr[][COLS]);
+float sum_diagonals(int arr[][COLS]);
+
+void print_matrix(int arr[][COLS])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+float sum_diagonals(int arr[][COLS])
+{
+    float diagonals_sum = 0;
+
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            if (i == j)
+                diagonals_sum += arr[i][j];
+        }
+    }
+    return diagonals_sum;
+}
+
+int main()
+{
+    printf("Program to find the sum of right diagonal elements\n");
+    int a[ROWS][COLS] = {{1, 2, 3},
+                         {4, 5, 6},
+                         {7, 8, 9}};
+
+    float diagonal_sum;
+
+    printf("Matrix A : \n");
+    print_matrix(a);
+    printf("\n");
+
+    diagonal_sum = sum_diagonals(a);
+    printf("The sum of diagonal elements = %.1f\n", diagonal_sum);
+
+    return 0;
+}
+```
+<br>
+
