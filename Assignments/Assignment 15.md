@@ -324,3 +324,61 @@ int main()
 ```
 <br>
 
+9. Write a function in C to merge two arrays of the same size sorted in descending order.
+```
+#include <stdio.h>
+
+void merge(int a[], int b[], int c[], int, int, int);
+
+void merge(int a[], int b[], int c[], int size1, int size2, int size3)
+{
+    int i, j = 0;
+    for (int k = 0; k < size3; k++)
+    {
+        if (a[i] < b[j])
+        {
+            c[k] = b[j];
+            j++;
+        }
+        else
+        {
+            c[k] = a[i];
+            i++;
+        }
+    }
+    
+}
+
+int main()
+{
+    printf("Program to merge two arrays of same size sorted in descending order\n");
+
+    int arr1[] = {10, 3, 1, 1, 1};
+    int arr2[] = {5, 4, 3, 2, 2};
+    int size1 = sizeof(arr1) / sizeof(arr1[0]), size2 = sizeof(arr2) / sizeof(arr2[0]);
+    int size3 = size1 + size2;
+    int arr3[size3];
+
+    merge(arr1, arr2, arr3, size1, size2, size3);
+
+    printf("Elements of array 1 are : \n");
+    for (int i = 0; i < size1; i++)
+        printf("%d\t", arr1[i]);
+    printf("\n");
+
+    printf("Elements of array 2 are : \n");
+    for (int i = 0; i < size2; i++)
+        printf("%d\t", arr2[i]);
+    printf("\n");
+    
+    printf("Elements of merged array are: \n");
+    for (int i = 0; i < size3; i++)
+        printf("%d\t", arr3[i]);
+    printf("\n");
+    
+    return 0;
+}
+```
+<br>
+
+
