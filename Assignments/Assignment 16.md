@@ -76,5 +76,61 @@ int main()
     return 0;
 }
 ```
+<br>
 
+3. Write a program in C to find the transpose of a given matrix.
+```
+#include <stdio.h>
+
+void print_matrix(int arr[][3], int, int);
+void transpose(int arr[][3], int arr_t[][3], int, int);
+
+void transpose(int arr[][3], int arr_t[][3], int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            arr_t[i][j] = arr[j][i];
+        }
+        
+    }
+    
+}
+
+void print_matrix(int arr[][3], int rows, int cols)
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int a[3][3] = {{1, 2, 3},
+                   {4, 5, 6},
+                   {7, 8, 9}};
+
+    int rows = sizeof(a) / sizeof(a[0]);
+    int cols = sizeof(a[0]) / sizeof(a[0][0]);
+
+    int a_t[3][3] = {0};
+
+    printf("Matrix a : \n");
+    print_matrix(a, rows, cols);
+
+    transpose(a, a_t, rows, cols);
+
+    printf("Matrix A Transpose : \n");
+    print_matrix(a_t, rows, cols);
+
+    return 0;
+}
+```
+<br>
 
