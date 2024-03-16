@@ -260,3 +260,117 @@ int main()
 ```
 <br>
 
+6. Write a program in C to find the sum of rows and columns of a Matrix.
+```
+#include <stdio.h>
+
+void read_matrix(int n, int m, int a[n][m]);
+void print_matrix(int n, int m, int a[n][m]);
+void calculate_row_sums(int n, int m, int a[n][m], int row_sums[n]);
+void print_row_sums(int n, int row_sums[n]);
+void calculate_col_sums(int n, int m, int a[n][m], int col_sums[m]);
+void print_col_sums(int m, int col_sums[m]);
+
+void read_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+        
+    }
+}
+
+void print_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void calculate_row_sums(int n, int m, int a[n][m], int row_sums[n])
+{
+
+    for (int i = 0; i < n; i++)
+    {
+        int row_sum = 0;
+        for (int j = 0; j < m; j++)
+        {
+            row_sum += a[i][j];
+        }
+        row_sums[i] = row_sum;
+    }
+    print_row_sums(n, row_sums);
+}
+
+void print_row_sums(int n, int row_sums[n])
+{
+    printf("------------------\n");
+    printf("Row sum: \n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("|%d|\n", row_sums[i]);
+    }
+    printf("------------------\n");
+    printf("\n"); 
+}
+
+void calculate_col_sums(int n, int m, int a[n][m], int col_sums[m])
+{
+    for (int i = 0; i < m; i++)
+    {
+        int col_sum = 0;
+        for (int j = 0; j < n; j++)
+        {
+            col_sum += a[j][i];
+        }
+        col_sums[i] = col_sum;
+    }
+    print_col_sums(m, col_sums);
+}
+
+void print_col_sums(int m, int col_sums[m])
+{
+    printf("------------------\n");
+    printf("Col sum: \n");
+    for (int i = 0; i < m; i++)
+    {
+        printf("%d\t", col_sums[i]);
+    }
+    printf("\n------------------\n");
+    printf("\n"); 
+}
+
+int main()
+{
+    int n, m;
+    printf("Program to find the sum of rows and columns of an n x m matrix\n");
+    printf("Let's read the matrix\n");
+    printf("Enter number of rows n: ");
+    scanf("%d", &n);
+    printf("Enter number of columns m: ");
+    scanf("%d", &m);
+
+    int a[n][m];
+    int row_sums[n], col_sums[m];
+
+    read_matrix(n, m, a);
+    printf("The entered matrix is: \n");
+    print_matrix(n, m, a);
+
+    calculate_row_sums(n, m, a, row_sums);
+    calculate_col_sums(n, m, a, col_sums);
+
+    return 0;
+}
+```
+<br>
+
