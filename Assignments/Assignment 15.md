@@ -273,3 +273,54 @@ int main()
 }
 ```
 <br>
+
+8. Write a function in C to print all unique elements in an array.
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+void print_unique(int a[], int);
+
+void print_unique(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        bool unique = true;
+        for (int j = 0; j < size; j++)
+        {
+            if (i != j && arr[i] == arr[j])
+            {
+                unique = false;
+                break;
+            }
+        }
+        if (unique)
+        {
+            printf("%d\t", arr[i]);
+        }
+    }
+    
+}
+
+int main()
+{
+    int arr[] = {1, 2, 23, 2, 1, 3, 4, 5, 6, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    printf("\nProgram to print unique elements in an array\n\n");
+
+    printf("The array is : \n");
+    for (int i = 0; i < size; i++)
+        printf("%d\t", arr[i]);
+    
+    printf("\n\n");
+    printf("The unique elements are : \n");
+    print_unique(arr, size);
+    printf("\n");
+
+    return 0;
+}
+
+```
+<br>
+
