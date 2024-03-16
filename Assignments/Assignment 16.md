@@ -374,3 +374,77 @@ int main()
 ```
 <br>
 
+7. Write a program in C to print or display the lower triangular of a given matrix.
+```
+#include <stdio.h>
+
+void read_matrix(int n, int m, int a[n][m]);
+void print_matrix(int n, int m, int a[n][m]);
+void print_lower_triangle(int n, int m, int a[n][m]);
+
+void print_lower_triangle(int n, int m, int a[n][m])
+{
+    printf("Lower triangle\n");
+    printf("--------------\n");
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (i >= j)
+                printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+    
+}
+
+void read_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+        
+    }
+}
+
+void print_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int n, m;
+    printf("Program to print or display the lower triangular of a given matrix\n");
+    printf("Let's read the matrix\n");
+    printf("Enter number of rows n: ");
+    scanf("%d", &n);
+    printf("Enter number of columns m: ");
+    scanf("%d", &m);
+
+    int a[n][m];
+    int row_sums[n], col_sums[m];
+
+    read_matrix(n, m, a);
+    printf("The entered matrix is: \n");
+    print_matrix(n, m, a);
+
+    print_lower_triangle(n, m, a);
+
+    return 0;
+}
+```
+<br>
+
