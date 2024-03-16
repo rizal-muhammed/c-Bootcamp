@@ -402,6 +402,82 @@ int main()
 ```
 <br>
 
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+void print_frequency(int a[], int);
+
+void print_frequency(int a[], int size)
+{
+    int new_max;
+    /* Finding max */
+    int max = a[0];
+
+    for (int i = 1; i < size; i++)
+    {
+        if (a[i] > max)
+            max = a[i];
+    }
+
+    /* Finding min */
+    int min = a[0];
+
+    for (int i = 0; i < size; i++)
+    {
+        if (a[i] < min)
+            min = a[i];
+    }
+
+    if (min < 0)
+        new_max = (max + 1) + (-1 * min);
+    else
+        new_max = max;
+
+    int frequency[new_max];
+    /* Initializing frequency array with 0 */
+    for (int i = 0; i < new_max; i++)
+        frequency[i] = 0;
+    
+    for (int i = 0; i < size; i++)
+    {
+        if (a[i] < 0)
+            frequency[max + (-1 * a[i])]++;
+        else
+            frequency[a[i]]++;
+    }
+    
+    /* Printing frequency if not 0 */
+    printf("Unique elements\n");
+    printf("---------------\n");
+    for (int i = 0; i < new_max; i++)
+    {
+        if (frequency[i] == 1)
+            if (i > max)
+                printf("%d\t", -1 * (i - max));
+            else
+                printf("%d\t", i);
+    }    
+    printf("\n");
+}
+
+int main()
+{
+    int arr[] = {3, 4, 3, 4, 5, 34, 23, 4, 100, 101, -10, -10, -5, -5, -5, -3, 0};
+    printf("Program to count the frequency of each element of an array\n");
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("The elements of array are: \n");
+    for (int i = 0; i < size; i++)
+        printf("%d\t", arr[i]);
+    printf("\n\n");
+    
+    print_frequency(arr, size);
+    
+    return 0;
+}
+```
+
 9. Write a function in C to merge two arrays of the same size sorted in descending order.
 ```
 #include <stdio.h>
