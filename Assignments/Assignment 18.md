@@ -385,3 +385,63 @@ int main()
 }
 ```
 <br>
+
+8. Write a function to count words in a given string
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+int count_words(char string[MAX_LENGTH]);
+
+int count_words(char string[MAX_LENGTH])
+{
+    int word_count = 0;
+    bool in_word = false;
+
+    for (int i = 0; string[i]; i++)
+    {
+        if (i == 0 && string[i] != ' ')
+            word_count++;
+        
+       if (string[i] == ' ')
+            word_count++;
+    }
+    return word_count;
+    
+}
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for (len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter sentence: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+    int word_count;
+    printf("Program to print count of words in a given string\n");
+    input(string);
+    word_count = count_words(string);
+    printf("Word count = %d\n", word_count);
+
+    return 0;
+}
+```
+<br>
+
