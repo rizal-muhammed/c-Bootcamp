@@ -14,3 +14,5 @@
 12. [Recursion in C language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2012.md)
 13. [More on recursion in C langugage](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2013.md)
 14. [Array in C language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2014.md)
+15. [Array and Functions in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2015.md)
+16. [Multi-Dimensional Array in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2016.md)
