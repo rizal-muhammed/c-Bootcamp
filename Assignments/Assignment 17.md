@@ -224,3 +224,51 @@ int main()
 ```
 <br>
 
+6. Write a program to reverse a string.
+```
+#include <stdio.h>
+#include <string.h>
+
+# define MAX_LENGH 100
+
+void reverse(char string[]);
+
+void reverse(char string[])
+{
+
+    for (int i = 0, j = strlen(string) - 1; i <= j; i++, j--)
+    {
+        char temp = string[i];
+        string[i] = string[j];
+        string[j] = temp;
+    }
+    
+    
+}
+
+int main()
+{
+    char string [MAX_LENGH];
+    int rc, count;
+    printf("Program to reverse a given string\n");
+
+    printf ("Input your string: ");
+    if (fgets(string, MAX_LENGH, stdin) != NULL)
+    {
+        int len = strlen(string);
+        if (len > 0 && string[len - 1] == '\n')
+            string[len - 1] = '\0';
+    }
+    rc = fputs(string, stdout);
+    if (rc == EOF)
+        perror("fputs()");
+    printf("\n");
+
+    reverse(string);
+    printf("\n%s\n", string);
+
+    return 0;
+}
+```
+<br>
+
