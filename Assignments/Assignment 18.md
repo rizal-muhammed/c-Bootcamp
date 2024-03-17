@@ -445,3 +445,62 @@ int main()
 ```
 <br>
 
+10. Write a function to find the repeated character in a given string.
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+void print_repeated_characters(char string[MAX_LENGTH]);
+
+void print_repeated_characters(char string[MAX_LENGTH])
+{
+    char frequency[256] = {0};
+    for (int i = 0; string[i]; i++)
+    {
+        frequency[string[i]]++;
+    }
+
+    printf("Repeated characters: \n");
+    for (int j = 0; j < sizeof(frequency) / sizeof(frequency[0]); j++)
+    {
+        if (frequency[j] > 1)
+            printf("%c ", j);        
+    }
+    printf("\n");
+    
+    
+}
+
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for (len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+    printf("Program to find the repeated characters in a given sentence\n");
+    input(string);
+    print_repeated_characters(string);
+    return 0;
+}
+```
+<br>
+
