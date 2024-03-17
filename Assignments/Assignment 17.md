@@ -173,4 +173,54 @@ int main()
 ```
 <br>
 
+5. Write a program to convert a given string into lowercase
+```
+#include <stdio.h>
+#include <stdlib.h> 
+
+# define MAX_LENGH 100
+
+void lower(char string[]);
+
+void lower(char string[])
+{
+    int len_alphabets = 26;
+
+    char lower[26] = {'A'};
+
+    for (int i = 1; i < len_alphabets; i++)
+        lower[i] = lower[i - 1] + 1;
+    
+    for (int i = 0; string[i]; i++)
+    {
+        for (int j = 0; lower[j]; j++)
+        {
+            if (string[i] == lower[j])
+                string[i] += abs('a' - 'A');
+        }
+        
+    }
+    
+}
+
+int main()
+{
+    char string [MAX_LENGH];
+    int rc, count;
+    printf("Program to convert a given string into lowercase\n");
+
+    printf ("Input your string: ");
+    fgets(string, MAX_LENGH, stdin);
+    printf("You've entered: \n");
+    rc = fputs(string, stdout);
+    if (rc == EOF)
+        perror("fputs()");
+
+    lower(string);
+    printf("%s\n", string);
+
+    return 0;
+}
+```
+<br>
 
