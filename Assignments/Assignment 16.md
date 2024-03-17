@@ -524,3 +524,104 @@ int main()
 ```
 <br>
 
+9. Write a program in C to accept a matrix and determine whether it is a sparse matrix.
+```
+#include <stdio.h>
+
+void read_matrix(int n, int m, int a[n][m]);
+void print_matrix(int n, int m, int a[n][m]);
+int is_sparse_fn(int n, int m, int a[n][m]);
+
+int is_sparse_fn(int n, int m, int a[n][m])
+{
+    /*
+    In numerical analysis and scientific computing, a sparse matrix or sparse array 
+    is a matrix in which most of the elements are zero.[1] There is no strict definition 
+    regarding the proportion of zero-value elements for a matrix to qualify as sparse but 
+    a common criterion is that the number of non-zero elements is roughly equal to the number 
+    of rows or columns.
+
+    https://en.wikipedia.org/wiki/Sparse_matrix
+    */
+    int b[n * m], k = 0, count_non_zero, is_sparse = 0;
+    for (int i = 0; i < n * m; i++)
+        b[i] = 0;
+    
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (a[i][j] != 0)
+                b[k++]++;
+            else
+                k++;
+        }
+        
+    }
+
+    for (int i = 0; i < n * m; i++)
+    {
+        if (b[i] != 0)
+            count_non_zero++;
+    }
+
+    if (count_non_zero <= n || count_non_zero <= m)
+        is_sparse = 1;
+    
+    return is_sparse;
+
+}
+
+void read_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+        
+    }
+}
+
+void print_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int n, m, is_sparse = 0;
+    printf("Program to determine whether a given matrix is sparse matrix or not\n");
+    printf("Let's read the matrix\n");
+    printf("Enter number of rows n: ");
+    scanf("%d", &n);
+    printf("Enter number of columns m: ");
+    scanf("%d", &m);
+
+    int a[n][m];
+    int row_sums[n], col_sums[m];
+
+    read_matrix(n, m, a);
+    printf("The entered matrix is: \n");
+    print_matrix(n, m, a);
+
+    is_sparse = is_sparse_fn(n, m, a);
+    if (is_sparse)
+        printf("The given matrix is sparse\n");
+    else
+        printf("The given matrix is not sparse\n");
+
+    return 0;
+}
+```
+<br>
+
