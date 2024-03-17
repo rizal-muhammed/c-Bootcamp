@@ -332,3 +332,56 @@ int main()
 ```
 <br>
 
+7. Write a function to check whether a given string is palindrome or not.
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+bool is_palindrome(char string[MAX_LENGTH]);
+
+bool is_palindrome(char string[MAX_LENGTH])
+{
+    bool palindrome = false;
+    int i, j;
+    for (i = 0, j = string_len(string) - 1; i <= j; i++, j--)
+    {
+        if (string[i] != string[j])
+            return palindrome;
+    }
+    return palindrome = true;
+}
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for (len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+    printf("Program to check whether a given string is palindrom or not\n");
+    input(string);
+    if(is_palindrome(string))
+        printf("The given string is palindrome\n");
+    else
+        printf("The given string is not palindrome\n");
+    return 0;
+}
+```
+<br>
