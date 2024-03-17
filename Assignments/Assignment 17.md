@@ -71,3 +71,54 @@ int main()
 ```
 <br>
 
+3. Write a program to count vowels in a given string
+```
+#include <stdio.h>
+
+# define MAX_LENGH 100
+
+int vowels_count(char string[]);
+
+int vowels_count(char string[])
+{
+    int count = 0;
+
+    for (int i = 0; string[i]; i++)
+    {
+        if (string[i] == 'A' || 
+            string[i] == 'E' || 
+            string[i] == 'I' || 
+            string[i] == 'O' || 
+            string[i] == 'U' || 
+            string[i] == 'a' ||
+            string[i] == 'e' || 
+            string[i] == 'i' || 
+            string[i] == 'o' || 
+            string[i] == 'u' )
+            count++;
+    }
+    return count;
+    
+}
+
+int main()
+{
+    char string [MAX_LENGH];
+    int rc, count;
+    printf("Program to count vowels in a given string\n");
+
+    printf ("Input your string: ");
+    fgets(string, MAX_LENGH, stdin);
+    rc = fputs(string, stdout);
+    if (rc == EOF)
+        perror("fputs()");
+    printf("\n");
+
+    count = vowels_count(string);
+    printf("There are %d vowels in above string\n", count);
+
+    return 0;
+}
+```
+<br>
+
