@@ -125,6 +125,7 @@ int main()
 4. Write a program to convert a given string into uppercase
 ```
 #include <stdio.h>
+#include <stdlib.h> 
 
 # define MAX_LENGH 100
 
@@ -144,7 +145,7 @@ void upper(char string[])
         for (int j = 0; lower[j]; j++)
         {
             if (string[i] == lower[j])
-                string[i] -= 32;
+                string[i] -= abs('a' - 'A');
         }
         
     }
@@ -171,4 +172,5 @@ int main()
 }
 ```
 <br>
+
 
