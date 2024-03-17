@@ -349,4 +349,53 @@ int main()
 ```
 <br>
 
+10. Write a program in C to Find the Frequency of Characters.
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define MAX_LENGTH 100
+
+int main()
+{
+    char string[MAX_LENGTH];
+    int freq_arr_len = (int)abs('~' - '!');
+
+    int frequency[freq_arr_len];
+    for (int i = 0; i < freq_arr_len; i++)
+    {
+        frequency[i] = 0;
+    }
+
+    printf("Program to find the frequency of characters in a given string\n");
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[strlen(string) - 1] == '\n')
+            string[strlen(string) - 1] = '\0';
+    }
+    
+    printf("You've entered: %s\n", string);
+
+    int i;
+    for (i = 0; string[i]; i++)
+    {
+        char c = string[i];
+        if(c >= '!' && c <= '~')
+            frequency[c - '!']++;
+    }
+    frequency[i] = '\0';
+    
+    
+    for (int i = 0; i < freq_arr_len; i++)
+    {
+        if (frequency[i] != 0)
+            printf("%c\t%d\n", i + '!', frequency[i]);
+    }
+    
+    return 0;
+}
+```
+<br>
 
