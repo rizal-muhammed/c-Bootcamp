@@ -169,4 +169,107 @@ int main()
 ```
 <br>
 
+4. Write a function to transform string into uppercase
+```
+#include <stdio.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+void upper(char string[MAX_LENGTH]);
+
+void upper(char string[MAX_LENGTH])
+{
+    int i;
+    for (i = 0; string[i]; i++)
+    {
+        if (string[i] >= 'a' && string[i] <= 'z')
+            string[i] -= 'a' - 'A';
+    }
+}
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for (len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+
+    printf("Program to transform given string into uppercase\n");
+    input(string);
+    upper(string);
+    printf("Upper case string\n");
+    printf("-----------------\n");
+    printf("%s\n", string);
+    return 0;
+}
+```
+<br>
+
+5. Write a function to transform a string into lowercase
+```
+#include <stdio.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+void lower(char string[MAX_LENGTH]);
+
+void lower(char string[MAX_LENGTH])
+{
+    int i;
+    for (i = 0; string[i]; i++)
+    {
+        if (string[i] >= 'A' && string[i] <= 'Z')
+            string[i] += 'a' - 'A';
+    }
+}
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for (len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+
+    printf("Program to transform given string into uppercase\n");
+    input(string);
+    lower(string);
+    printf("Lower case string\n");
+    printf("-----------------\n");
+    printf("%s\n", string);
+    return 0;
+}
+```
+<br>
 
