@@ -272,3 +272,45 @@ int main()
 ```
 <br>
 
+7. Write a program in C to count the total number of alphabets, digits and special characters in a string.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+int main()
+{
+    char string[MAX_LENGTH];
+    int num_alphabets = 0, num_digits = 0, num_sp_characters = 0;
+    printf("Program to count the total number of alphabets, "
+    "digits and special characters in a string\n");
+
+    printf("Enter string: \n");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[strlen(string) - 1] == '\n')
+            string[strlen(string) - 1] = '\0';
+    }
+
+    for (int i = 0; string[i]; i++)
+    {
+        if ((string[i] >= 'A' && string[i] <= 'Z') ||
+            (string[i] >= 'a' && string[i] <= 'z'))
+            num_alphabets++;
+        else if(string[i] >= '0' && string[i] <= '9')
+            num_digits++;
+        else if ((string[i] >= '!' && string[i] <= '/') ||
+                 (string[i] >= ':' && string[i] <= '@') ||
+                 (string[i] >= '[' && string[i] <= '`') ||
+                 (string[i] >= '{' && string[i] <= '~'))
+            num_sp_characters++;
+    }
+
+    printf("\nThe above string contains\n%d Alphabet(s)\n%d Digit(s)\n%d "
+    "Special charater(s)\n", num_alphabets, num_digits, num_sp_characters);
+    
+}
+```
+<br>
+
