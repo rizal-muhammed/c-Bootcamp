@@ -273,3 +273,62 @@ int main()
 ```
 <br>
 
+6. Write a function to check whether a given string is an alphanumeric string or not. (Alphanumeric string must contain at least one alphabet and one digit)
+```
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_LENGTH 100
+
+void input(char string[MAX_LENGTH]);
+int string_len(char string[MAX_LENGTH]);
+bool is_alphanumeric(char string[MAX_LENGTH]);
+
+bool is_alphanumeric(char string[MAX_LENGTH])
+{
+    int i;
+    bool alpha = false, numerical = false;
+
+    for (i = 0; string[i]; i++)
+    {
+        if (string[i] >= '0' && string[i] <= '9')
+            numerical = true;
+        if ((string[i] >= 'A' && string[i] <= 'Z') ||
+            (string[i] >= 'a' && string[i] <= 'z'))
+            alpha = true;
+    }
+    return alpha & numerical;
+    
+}
+
+int string_len(char string[MAX_LENGTH])
+{
+    int len;
+    for(len = 0; string[len]; len++);
+    return len;
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[string_len(string) - 1] == '\n')
+            string[string_len(string) - 1] = '\0';
+    }
+}
+
+int main()
+{
+    char string[MAX_LENGTH];
+    printf("Program to check whether a given string is alphanumeric string or not\n");
+    input(string);
+    if (is_alphanumeric(string))
+        printf("Given string is alphanumeric\n");
+    else
+        printf("Given string is not alphanumeric\n");
+    return 0;
+}
+```
+<br>
+
