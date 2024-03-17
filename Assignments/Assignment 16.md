@@ -625,3 +625,95 @@ int main()
 ```
 <br>
 
+10. Write a program in C to find the row with maximum number of 1s.
+```
+#include <stdio.h>
+
+void read_matrix(int n, int m, int a[n][m]);
+void print_matrix(int n, int m, int a[n][m]);
+int row_with_max_ones(int n, int m, int a[n][m]);
+
+int row_with_max_ones(int n, int m, int a[n][m])
+{
+    /*
+    If two or more rows has equal maximum number of 1's, then first row number is returned
+    */
+    int b[n], max_row = 0, max_ones;
+    for (int i = 0; i < n; i++)
+        b[i] = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (a[i][j] == 0)
+                b[i]++;
+        }
+        
+    }
+
+    max_ones = b[0];
+    for (int i = 0; i < n; i++)
+    {
+        if (b[i] > max_ones)
+        {
+            max_ones = b[i];
+            max_row = i;
+        }
+    }
+    
+    return max_row;
+    
+}
+
+void read_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+        
+    }
+}
+
+void print_matrix(int n, int m, int a[n][m])
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int n, m, row;
+    printf("Program to find the row with maximum number of 1s\n");
+    printf("Let's read the matrix\n");
+    printf("Enter number of rows n: ");
+    scanf("%d", &n);
+    printf("Enter number of columns m: ");
+    scanf("%d", &m);
+
+    int a[n][m];
+    int row_sums[n], col_sums[m];
+
+    read_matrix(n, m, a);
+    printf("The entered matrix is: \n");
+    print_matrix(n, m, a);
+    printf("\n");
+
+    row = row_with_max_ones(n, m, a);
+    printf("Row %d has maximum number of 1's\n", row);
+
+    return 0;
+}
+```
+<br>
+
