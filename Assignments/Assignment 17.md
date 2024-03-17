@@ -122,3 +122,53 @@ int main()
 ```
 <br>
 
+4. Write a program to convert a given string into uppercase
+```
+#include <stdio.h>
+
+# define MAX_LENGH 100
+
+void upper(char string[]);
+
+void upper(char string[])
+{
+    int len_alphabets = 26;
+
+    char lower[26] = {'a'};
+
+    for (int i = 1; i < len_alphabets; i++)
+        lower[i] = lower[i - 1] + 1;
+    
+    for (int i = 0; string[i]; i++)
+    {
+        for (int j = 0; lower[j]; j++)
+        {
+            if (string[i] == lower[j])
+                string[i] -= 32;
+        }
+        
+    }
+    
+}
+
+int main()
+{
+    char string [MAX_LENGH];
+    int rc, count;
+    printf("Program to convert a given string into uppercase\n");
+
+    printf ("Input your string: ");
+    fgets(string, MAX_LENGH, stdin);
+    printf("You've entered: \n");
+    rc = fputs(string, stdout);
+    if (rc == EOF)
+        perror("fputs()");
+
+    upper(string);
+    printf("%s\n", string);
+
+    return 0;
+}
+```
+<br>
+
