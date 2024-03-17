@@ -314,3 +314,39 @@ int main()
 ```
 <br>
 
+8. Write a program in C to copy one string to another string.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+int main()
+{
+    char string[MAX_LENGTH];
+    int i;
+    printf("Program to copy one string to another string\n");
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[strlen(string) - 1] == '\n')
+            string[strlen(string)] = '\0';
+    }
+
+    printf("You've entered: %s\n", string);
+    char copied_string[strlen(string)];
+    for (i = 0; i < strlen(string); i++)
+    {
+        copied_string[i] = string[i];
+    }
+    copied_string[i] = '\0';
+
+    printf("Copied string: \n");
+    printf("%s", copied_string);
+    
+    return 0;
+}
+```
+<br>
+
+
