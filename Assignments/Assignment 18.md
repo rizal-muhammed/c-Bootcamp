@@ -445,6 +445,83 @@ int main()
 ```
 <br>
 
+9. Write a function to reverse a string word wise. (For example if the given string is “Mysirg Education Services” then the resulting string should be “Services Education Mysirg” )
+```
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 1000
+
+void reverse(char string[MAX_LENGTH]);
+void reverse_string(char string[MAX_LENGTH]);
+void input(char string[MAX_LENGTH]);
+
+void reverse_string(char string[MAX_LENGTH])
+{
+    int i, j;
+    char temp;
+    for (i = 0, j = strlen(string) - 1; i <= j; i++, j--)
+    {
+        temp = string[i];
+        string[i] = string[j];
+        string[j] = temp;
+    }
+    
+}
+
+void reverse(char string[MAX_LENGTH])
+{
+    int i, j = 0, k, l;
+    char temp[MAX_LENGTH];
+    temp[strlen(string)] = '\0';
+
+    for (i = 0; string[i]; i++)
+    {
+        if (string[i - 1] == ' ')
+            j = i;
+        if (string[i + 1] == '\0' || string[i + 1] == ' ')
+        {
+
+            for (k = i, l = j; l <= k; k--, j++)
+            {
+                temp[j] = string[k];
+            }
+            if (string[i + 1] == ' ')
+                temp[i+1] = ' ';
+            
+        }
+    }
+    strcpy(string, temp);
+    reverse_string(string);
+    printf("Reversed string\n");
+    printf("---------------\n");
+    printf("%s\n", string);
+    
+}
+
+void input(char string[MAX_LENGTH])
+{
+    printf("Enter sentence: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[strlen(string) - 1] == '\n')
+            string[strlen(string) - 1] = '\0';
+    }
+}
+
+
+int main()
+{
+    char string[MAX_LENGTH] = {"My name is Sachin"};
+    printf("Program to reverse given string in a specific way\n");
+    input(string);
+    reverse(string);
+
+    return 0;
+}
+```
+<br>
+
 10. Write a function to find the repeated character in a given string.
 ```
 #include <stdio.h>
