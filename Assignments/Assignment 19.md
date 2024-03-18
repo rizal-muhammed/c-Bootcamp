@@ -71,3 +71,51 @@ int main()
 }
 ```
 <br>
+
+3. Write a program to read and display a 2D array of strings in C language.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define ROWS 5
+#define MAX_LEN 1000
+
+void input(char str[ROWS][MAX_LEN]);
+
+void input(char str[ROWS][MAX_LEN])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        if (fgets(str[i], MAX_LEN, stdin) != NULL)
+        {
+            if (str[i][strlen(str[i]) - 1] == '\n')
+                str[i][strlen(str[i]) - 1] = '\0';
+        }
+    }
+    
+}
+
+int main()
+{
+    char string[ROWS][MAX_LEN];
+    int frequency[ROWS] = {0};
+
+    printf("Program to find the frequency of vowels in each of the 5 user input strings\n");
+
+    printf("Let's input the strings\n");
+    input(string);
+
+    printf("\nThe strings are \n");
+    printf("---------------\n");
+    for (int i = 0; i < ROWS; i++)
+    {
+        printf("%s\n", string[i]);
+    }
+    
+
+    return 0;
+}
+```
+<br>
+
