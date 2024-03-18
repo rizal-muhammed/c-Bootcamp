@@ -119,6 +119,97 @@ int main()
 ```
 <br>
 
+4. Write a program to search a string in the list of strings.
+```
+#include <stdio.h>
+#include <strings.h>
+
+#define ROWS 3
+#define MAX_LEN 100
+
+void input(char str[ROWS][MAX_LEN]);
+void input_search_string(char search_string[MAX_LEN]);
+int search(char str[][MAX_LEN], char search_str[]);
+int string_compare(char str1[MAX_LEN], char str2[MAX_LEN]);
+int string_len(char str[MAX_LEN]);
+
+int string_len(char str[MAX_LEN])
+{
+    int len;
+    for (len = 0; str[len]; len++);
+    return len;
+}
+
+int string_compare(char str1[MAX_LEN], char str2[MAX_LEN])
+{
+    /* returns 1 if both strings are equal */
+    int str1_len = string_len(str1);
+    int str2_len = string_len(str2);
+
+    for (int i = 0, j = 0; str1_len > str2_len ? str1[i]: str2[j]; i++, j++)
+    {
+        if (str1[i] != str2[j])
+            return 0;
+    }
+    return 1;
+
+}
+
+
+int search(char str[][MAX_LEN], char search_str[])
+{
+    /* returns 1 if the search string is present in strings array */
+    for (int i = 0; i < ROWS; i++)
+    {
+        if (string_compare(str[i], search_str) == 0)
+            return 1;
+    }
+    return 0;
+    
+}
+
+void input_search_string(char search_string[MAX_LEN])
+{
+    printf("Enter search string: ");
+    if (fgets(search_string, MAX_LEN, stdin) != NULL)
+    {
+        if (search_string[strlen(search_string) - 1] == '\n')
+            search_string[strlen(search_string) - 1] = '\0';
+    }
+}
+
+void input(char str[ROWS][MAX_LEN])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        printf("Enter string %d: ", i + 1);
+        if (fgets(str[i], MAX_LEN, stdin) != NULL)
+        {
+            if (str[i][strlen(str[i]) - 1] == '\n')
+                str[i][strlen(str[i]) - 1] = '\0';
+        }
+    }
+    
+}
+
+int main()
+{
+    char strings[ROWS][MAX_LEN];
+    char search_string[MAX_LEN];
+
+    printf("program to search a string in the list of strings\n");
+    input(strings);
+    input_search_string(search_string);
+    if (search(strings, search_string))
+        printf("Search string is found\n");
+    else
+        printf("Search string doesn't found\n");
+    
+    return 0;
+}
+```
+<br>
+
 6. Write a program to print the strings which are palindrome in the list of strings.
 ```
 #include <stdio.h>
