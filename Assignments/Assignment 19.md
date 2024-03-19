@@ -72,6 +72,70 @@ int main()
 ```
 <br>
 
+2. Write a program to sort 10 city names stored in two dimensional arrays, taken from the user.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define ROWS 10
+#define MAX_LEN 100
+
+void input(char str[][MAX_LEN]);
+void sort(char str[][MAX_LEN]);
+
+void sort(char str[][MAX_LEN])
+{
+    char temp[MAX_LEN];
+
+    for (int i = 0; i < (ROWS - 1); i++)
+    {
+        for (int j = 0, k = 1; k < (ROWS - i); j++, k++)
+        {
+            if (strcmp(str[j], str[k]) > 0)
+            {
+                strcpy(temp, str[j]);
+                strcpy(str[j], str[k]);
+                strcpy(str[k], temp);
+            }
+        }
+    }
+}
+
+void input(char str[][MAX_LEN])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        printf("Enter city %d: ", i + 1);
+        if (fgets(str[i], MAX_LEN, stdin) != NULL)
+        {
+            if (str[i][strlen(str[i]) - 1] == '\n')
+                str[i][strlen(str[i]) - 1] = '\0';
+        }
+    }
+    
+}
+
+int main()
+{
+    char strings[ROWS][MAX_LEN];
+
+    printf("Program to sort %d city names in alphabetical order\n", ROWS);
+    printf("Enter %d city names: \n", ROWS);
+    printf("No of rows  = %lu\n", sizeof(strings) / sizeof(strings[0]));
+    input(strings);
+    sort(strings);
+    
+    printf("\nStrings in sorted order\n");
+    for (int i = 0; i < sizeof(strings) / sizeof(strings[0]); i++)
+    {
+        printf("%s\n", strings[i]);
+    }
+
+    return 0;
+}
+```
+<br>
+
 3. Write a program to read and display a 2D array of strings in C language.
 ```
 #include <stdio.h>
