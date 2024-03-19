@@ -405,3 +405,69 @@ int main()
 ```
 <br>
 
+9. Write a program that asks the user to enter a username. If the username entered is one of the names in the list then the user is allowed to calculate the factorial of a number. Otherwise, an error message is displayed
+```
+#include <stdio.h>
+#include <string.h>
+
+#define ROWS 5
+#define MAX_LEN 100
+
+int get_factorial(char strings[][MAX_LEN], char string[MAX_LEN]);
+int factorial(int n);
+
+int factorial(int n)
+{
+
+    if (n == 0 || n == 1)
+        return 1;
+    if (n > 1)
+        return n * factorial(n - 1);
+    return 0;
+}
+
+int get_factorial(char strings[][MAX_LEN], char string[MAX_LEN])
+{
+    int N, fact;
+
+    for (int i = 0; i < ROWS; i++)
+    {
+        if (strcmp(strings[i], string) == 0)
+        {
+            printf("Authentication successful\n");
+            printf("Enter N: ");
+            scanf("%d", &N);
+            fact = factorial(N);
+            return fact;
+        }
+    }
+
+    printf("User not found\n");
+    return 0;
+    
+}
+
+int main()
+{
+    char usernames[ROWS][MAX_LEN] = {"john_doe", "jane_smith", "chris_taylor", "amanda_green", "emily_jones"};
+    char username[MAX_LEN];
+    int fact;
+
+    printf("Program to calculate factorial of a given number N\n");
+    printf("Enter your username: \n");
+
+    if (fgets(username, MAX_LEN, stdin) != NULL)
+    {
+        if (username[strlen(username) - 1] == '\n')
+            username[strlen(username) - 1] = '\0';
+    }
+
+    fact = get_factorial(usernames, username);
+    if (fact != 0)
+        printf("%d\n", fact);
+
+    return 0;
+}
+```
+<br>
+
