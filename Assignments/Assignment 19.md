@@ -274,6 +274,69 @@ int main()
 ```
 <br>
 
+5. Suppose we have a list of email addresses, check whether all email addresses have ‘@’ in it. Print the odd email out.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define ROWS 5
+#define MAX_LEN 100
+#define SPECIAL_CHAR '@'
+
+void input(char str[][MAX_LEN]);
+void print_odd_emails_out(char strings[][MAX_LEN]);
+int contains_sp_char(char string[MAX_LEN], char sp_char);
+
+int contains_sp_char(char string[MAX_LEN], char sp_char)
+{
+    for (int i = 0; string[i]; i++)
+    {
+        if (string[i] == sp_char)
+            return 1;
+    }
+    return 0;
+    
+}
+
+void print_odd_emails_out(char strings[][MAX_LEN])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        if (!contains_sp_char(strings[i], SPECIAL_CHAR))
+            printf("%s\n", strings[i]);
+    }
+    
+}
+
+void input(char str[][MAX_LEN])
+{
+    for (int i = 0; i < ROWS; i++)
+    {
+        printf("Enter email %d: ", i + 1);
+        if (fgets(str[i], MAX_LEN, stdin) != NULL)
+        {
+            if (str[i][strlen(str[i]) - 1] == '\n')
+                str[i][strlen(str[i]) - 1] = '\0';
+        }
+    }
+    
+}
+
+int main()
+{
+    char emails[ROWS][MAX_LEN];
+
+    printf("Program to print odd emails out\n");
+    input(emails);
+
+    printf("\nOdd emails out: \n");
+    print_odd_emails_out(emails);
+
+    return 0;
+}
+```
+<br>
+
 6. Write a program to print the strings which are palindrome in the list of strings.
 ```
 #include <stdio.h>
