@@ -349,6 +349,47 @@ int main()
 ```
 <br>
 
+9. Write a C program to sort a string array in ascending order.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_LENGTH 100
+
+int main()
+{
+    char string[MAX_LENGTH];
+    char temp;
+
+    printf("Program to sort a string array in ascending order\n");
+    printf("Enter string: ");
+    if (fgets(string, MAX_LENGTH, stdin) != NULL)
+    {
+        if (string[strlen(string) - 1] == '\n')
+            string[strlen(string) - 1] = '\0';
+    }
+
+    for (int i = 0; i < string[i]; i++)
+    {
+        for (int j = 0, k = 1; j < strlen(string) - 1 - i; j++, k++)
+        {
+            if (string[j] > string[k])
+            {
+                temp = string[j];
+                string[j] = string[k];
+                string[k] = temp;
+            }
+        }
+        
+    }
+
+    printf("%s\n", string);
+    
+    
+}
+```
+<br>
+
 10. Write a program in C to Find the Frequency of Characters.
 ```
 #include <stdio.h>
