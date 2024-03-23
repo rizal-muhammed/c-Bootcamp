@@ -471,3 +471,65 @@ int main()
 ```
 <br>
 
+10. Create an authentication system. It should be menu driven.
+```
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_USERS 5
+#define MAX_LENGTH 100
+
+char usernames[MAX_USERS][MAX_LENGTH] = {"AlexAdventures", 
+                                        "JakeJourneyman", 
+                                        "EthanExpedition",
+                                        "LiamWanderer",
+                                        "OliviaOdyssey"};
+char passwords[MAX_USERS][MAX_LENGTH] = {"Password", 
+                                        "12345678", 
+                                        "welcome",
+                                        "monkey",
+                                        "football"};
+
+void login();
+
+void login()
+{
+    char user[MAX_LENGTH], password[MAX_LENGTH];
+    int flag = 0;
+
+    printf("Welcome\n");
+    printf("Enter Username: ");
+    if (fgets(user, MAX_LENGTH, stdin) != NULL)
+    {
+        if (user[strlen(user) - 1] == '\n')
+            user[strlen(user) - 1] = '\0';
+    }
+
+    printf("Enter Password: ");
+    if (fgets(password, MAX_LENGTH, stdin) != NULL)
+    {
+        if (password[strlen(password) - 1] == '\n')
+            password[strlen(password) - 1] = '\0';
+    }
+
+    for (int i = 0; i < MAX_USERS; i++)
+    {
+        if (strcmp(usernames[i], user) == 0 && strcmp(passwords[i], password) == 0)
+        {
+            printf("Welcome, %s\n", user);
+            return;
+        }
+    }
+
+    printf("User not found\n");
+    
+}
+
+int main()
+{
+    login();
+    return 0;
+}
+```
+<br>
+
