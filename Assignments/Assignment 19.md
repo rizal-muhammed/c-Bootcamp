@@ -405,6 +405,88 @@ int main()
 ```
 <br>
 
+8. Given a list of words followed by two words, the task is to find the minimum distance
+between the given two words in the list of words.
+(Example : s = {“the”,”quick”,”brown”,”fox”,”quick”}
+word1 = “the”, word2 = “fox”, OUTPUT : 1 )
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define MAX_LENGTH 100
+
+int minimum_distance(char words[][MAX_LENGTH], size_t n, char word1[], char word2[]);
+void input(char word1[], char word2[]);
+
+void input(char word1[], char word2[])
+{
+    printf("Enter word 1: ");
+    if (fgets(word1, MAX_LENGTH, stdin) != NULL)
+    {
+        if (word1[strlen(word1) - 1] == '\n')
+            word1[strlen(word1) - 1] = '\0';
+    }
+
+    printf("Enter word 2: ");
+    if (fgets(word2, MAX_LENGTH, stdin) != NULL)
+    {
+        if (word2[strlen(word2) - 1] == '\n')
+            word2[strlen(word2) - 1] = '\0';
+    }
+}
+
+int minimum_distance(char words[][MAX_LENGTH], size_t n, char word1[], char word2[])
+{
+    int w1_idx = -1, w2_idx = -1;
+    int min_dist = 9999;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (strcmp(words[i], word1) == 0)
+            w1_idx = i;
+        if (strcmp(words[i], word2) == 0)
+            w2_idx = i;
+    }
+
+    if (w1_idx != -1 && w2_idx != -1)
+    {
+        for (int i = 0; word1[i] != '\0'; i++)
+        {
+            for (int j = 0; word2[j] != '\0'; j++)
+            {
+                if (abs(word1[i] - word2[j]) < min_dist)
+                    min_dist = abs(word1[i] - word2[j]);
+            }
+            
+        }
+        
+        return min_dist;
+    }
+    
+    return 0;
+}
+
+int main()
+{
+    char words[][MAX_LENGTH] = {"the", "quick", "brown", "fox"};
+    char word1[MAX_LENGTH], word2[MAX_LENGTH];
+    size_t n = sizeof(words) / sizeof(words[0]);
+    int min_dist;
+
+    printf("Program to find the minimum distance between two given words\n");
+    input(word1, word2);
+    min_dist = minimum_distance(words, n, word1, word2);
+    if (min_dist)
+        printf("The minimum distance between %s and %s is %d\n", word1, word2, min_dist);
+    else
+        printf("One or more words entered doesn't exists in the list\n");
+
+    return 0;
+}
+```
+<br>
+
 9. Write a program that asks the user to enter a username. If the username entered is one of the names in the list then the user is allowed to calculate the factorial of a number. Otherwise, an error message is displayed
 ```
 #include <stdio.h>
