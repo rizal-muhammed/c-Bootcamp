@@ -18,3 +18,4 @@
 16. [Multi-Dimensional Array in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2016.md)
 17. [String Basics in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2017.md)
 18. [String and Functions in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2018.md)
+19. [Handling Multiple Strings in C Language](https://github.com/rizal-muhammed/c-Bootcamp/blob/main/Assignments/Assignment%2019.md)
