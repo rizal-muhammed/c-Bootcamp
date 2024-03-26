@@ -405,6 +405,43 @@ int main()
 ```
 <br>
 
+7. From the list of IP addresses, check whether all ip addresses are valid.
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define MAX_LENGTH 20
+
+int main()
+{
+    char ip[] = {"127.0.0.1"};
+    char temp[MAX_LENGTH];
+    strcpy(temp, ip);
+    char * pch;
+    int int_pch, flag = 1, i = 0;
+    pch = strtok(temp, ".");
+    while (pch != NULL)
+    {
+        i++;
+        int_pch = atoi(pch);
+        if (!(int_pch >= 0 && int_pch <= 255))
+        {
+            flag = 0;
+            break;
+        }
+        pch = strtok(NULL, ".");
+    }
+    if ((flag == 1) && (i == 4))
+        printf("IP address %s is valid\n", ip);
+    else
+        printf("IP addresss %s is not valid\n", ip);
+    
+    return 0;
+}
+```
+<br>
+
 8. Given a list of words followed by two words, the task is to find the minimum distance
 between the given two words in the list of words.
 (Example : s = {“the”,”quick”,”brown”,”fox”,”quick”}
